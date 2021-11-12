@@ -1,12 +1,12 @@
-Package: cdiscpilot
+Package: admiral.test
 Type: Package
-Title: CDISC Pilot Datasets
+Title: Test Data for the {admiral} Package
 Version: 0.1.0
 Authors@R: c(
   person("Thomas", "Neitmann", email = "thomas.neitmann@roche.com", role = c("aut", "cre")),
   person("Clinical Data Interchange Standards Consortium", role = "cph")
   )
-Description: Contains SDTM datasets from the CDISC pilot project.
+Description: A set of SDTM datasets from the CDISC pilot project used for testing inside {admiral}.
 License: file LICENSE
 Depends: R (>= 3.5.0)
 Encoding: UTF-8
