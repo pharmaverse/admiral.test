@@ -94,3 +94,15 @@
 #'
 #' @source \url{https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/vs.xpt}
 "vs"
+
+#' SMQ Dataset
+#'
+#' An example SMQ dataset
+#'
+"smq_db"
+
+#' SDG Dataset
+#'
+#' An example SDG dataset
+#'
+"sdg_db"
