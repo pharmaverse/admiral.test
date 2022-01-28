@@ -53,6 +53,13 @@
 #' @source \url{https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/mh.xpt}
 "mh"
 
+#' Pharmacokinetics Parameters Dataset
+#'
+#' A SDTM PC dataset simulated by Antonio Rodríguez Contestí
+#'
+#' @author Antonio Rodríguez Contestí
+"pc"
+
 #' Questionnaire Dataset
 #'
 #' A SDTM QS dataset from the CDISC pilot project
