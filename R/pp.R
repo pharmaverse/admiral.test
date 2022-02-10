@@ -4,10 +4,7 @@ library(dplyr) #apply distincts
 library(lubridate)
 library(ggplot2)
 
-
-setwd('D:/Users/ARodr181/Downloads/sdtm')
-
-load(file = "pc.rda")
+data("pc")
 
 #Calculate subjects with all missing;
 blq_usubjid = pc %>% 
@@ -151,13 +148,7 @@ pp <- PP %>%
 pp <- pp %>% group_by(STUDYID,USUBJID) %>% mutate(PPSEQ = row_number())
 
 #Load ex to add the reference time (EXSTDTC)
-ex = read_xpt(
-  "ex.xpt",
-  col_select = NULL,
-  skip = 0,
-  n_max = Inf,
-  .name_repair = "unique"
-)
+data("ex")
 
 #we only used baseline
 ex1 = ex %>%
@@ -175,5 +166,3 @@ pp = subset(pp,select=c("STUDYID", "DOMAIN", "USUBJID", "PPSEQ", "PPTESTCD","PPT
 
 
 save(pp, file = "pp.rda")
-
-write_xpt(pp,"pp.xpt",version=5)
