@@ -2,22 +2,9 @@ library(haven) #Load xpt
 library(dplyr) #apply distincts
 library(lubridate)
 library(ggplot2)
-setwd('D:/Users/ARodr181/Downloads/sdtm')
-ex = read_xpt(
-  "ex.xpt",
-  col_select = NULL,
-  skip = 0,
-  n_max = Inf,
-  .name_repair = "unique"
-)
-dm = read_xpt(
-  "dm.xpt",
-  col_select = NULL,
-  skip = 0,
-  n_max = Inf,
-  .name_repair = "unique"
-)
-#Remove screen failures, they will not amke it to drug infussion
+data("ex")
+data("dm")
+#Remove screen failures, they will not make it to drug infusion
 dm1 = dm %>%
       filter(ARMCD!="Scrnfail")
 
@@ -28,7 +15,7 @@ dmex = merge(dm1[,c(1,3)],ex,by=c("STUDYID","USUBJID"))
 dmex1 = dmex %>%
         filter(VISIT == "BASELINE")
 
-#æ
+#Ã¦
 #We can check on figure 2 that the patch behaves like 2 phases (absortion up to the plato, and an elimination)
 #Samples
 t = c(-0.5,0.08,0.5,1,1.5,2,4,6,8,12,16,24,36,48)
@@ -129,4 +116,3 @@ plot <- ggplot(pc, aes(x=PCTPTNUM, y=PCSTRESN, group=USUBJID)) + geom_line() +
 plot
 
 save(pc, file = "pc.rda")
-write_xpt(pc,"pc.xpt",version=5)
