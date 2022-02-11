@@ -5,10 +5,12 @@ Version: 0.1.0
 Authors@R: c(
   person("Thomas", "Neitmann", email = "thomas.neitmann@roche.com", role = c("aut", "cre")),
   person("Stefan", "Bundfuss", role = "aut"),
+  person("F. Hoffmann-La Roche AG", role = c("cph", "fnd")),
+  person("GlaxoSmithKline LLC", role = c("cph", "fnd")),
   person("Clinical Data Interchange Standards Consortium", role = "cph")
   )
 Description: A set of SDTM datasets from the CDISC pilot project used for testing inside {admiral}.
-License: file LICENSE
+License: Apache License (>= 2.0)
 Depends: R (>= 3.5.0)
 Imports:
     dplyr,
