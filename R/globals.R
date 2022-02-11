@@ -1,0 +1,9 @@
+globalVariables(c(
+  "scope",
+  "sdg_id",
+  "sdg_name",
+  "smq_id",
+  "smq_name",
+  "termname",
+  "termvar"
+))

@@ -10,6 +10,10 @@ Authors@R: c(
 Description: A set of SDTM datasets from the CDISC pilot project used for testing inside {admiral}.
 License: file LICENSE
 Depends: R (>= 3.5.0)
+Imports:
+    dplyr,
+    magrittr,
+    rlang
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.0

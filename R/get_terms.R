@@ -1,6 +1,13 @@
 #' An example function as expected by the `get_smq_fun` parameter of
 #' `admiral::create_query_data()`
-
+#'
+#' @param smq_select An smq_select object defining the terms
+#'
+#' @param version MedDRA version
+#'
+#' @param keep_id Should `QUERY_ID` be included in the output?
+#'
+#' @param temp_env Temporary environment
 get_smq_terms <- function(smq_select,
                           version,
                           keep_id,
@@ -31,6 +38,14 @@ get_smq_terms <- function(smq_select,
 
 #' An example function as expected by the `get_smq_fun` parameter of
 #' `admiral::create_query_data()`
+#'
+#' @param sdg_select An sdg_select object defining the terms
+#'
+#' @param version SDG version
+#'
+#' @param keep_id Should `QUERY_ID` be included in the output?
+#'
+#' @param temp_env Temporary environment
 get_sdg_terms <- function(sdg_select,
                           version,
                           keep_id,
