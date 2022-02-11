@@ -60,6 +60,13 @@
 #' @author Antonio Rodríguez Contestí
 "pc"
 
+#' Pharmacokinetic Parameters Dataset
+#'
+#' A SDTM PP dataset simulated by Antonio Rodríguez Contestí
+#'
+#' @author Antonio Rodríguez Contestí
+"pp"
+
 #' Questionnaire Dataset
 #'
 #' A SDTM QS dataset from the CDISC pilot project

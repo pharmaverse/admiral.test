@@ -1,14 +1,17 @@
 library(haven) #Load xpt
+library(plyr)
 library(dplyr) #apply distincts
 library(lubridate)
 library(ggplot2)
+
 data("ex")
 data("dm")
+
 #Remove screen failures, they will not make it to drug infusion
 dm1 <- dm %>%
       filter(ARMCD != "Scrnfail")
 
-#use subjects in both datasets (ex,dm1) to create pc
+# use subjects in both datasets (ex,dm1) to create pc
 dmex <- merge(dm1[, c(1, 3)], ex, by = c("STUDYID", "USUBJID"))
 
 # I'm going to calculate only PC on Baseline,
@@ -17,21 +20,23 @@ dmex1 <- dmex %>%
         filter(VISIT == "BASELINE")
 
 # We can check on figure 2 that the patch behaves like
-# 2 phases (absortion up to the plato, and an elimination)
-#Samples
+# 2 phases (absorption up to the plateau, and elimination)
+# Samples
 t <- c(-0.5, 0.08, 0.5, 1, 1.5, 2, 4, 6, 8, 12, 16, 24, 36, 48)
-# k0: rate of drug infussion units per time
+
+# k0: rate of drug infusion units per time
 # add Calculate some noise
 nrows <- dim(dmex1)[1]
 noise <- runif(n = nrows, min = -5, max = 5)
 dmex1$k0 <- 100 + noise;
-#K is the elimination rate (abso???rtion significantly larger)
-  #add Calculate some noise
+
+# K is the elimination rate (absorption significantly larger)
+# add Calculate some noise
 noise <- runif(n = nrows, min = -0.05, max = 0.05)
 dmex1$K <- 0.7 + noise
 dmex1$V <- dmex1$EXDOSE / (dmex1$K)
 
-#ini dataset
+# init dataset
 PC <- NULL;
 for (t0 in t) {
   dmex1$t <- t0
@@ -60,7 +65,7 @@ for (t0 in t) {
   }
 }
 
-#Constant var
+# Constant var
 PC$DOMAIN <- "PC"
 PC$PCTESTCD <- "XAN"
 PC$PCTEST   <- "XANOMELINE"
@@ -71,25 +76,28 @@ PC$PCSPEC <- "PLASMA"
 PC$PCLLOQ <- 0.01
 PC$PCTPTNUM <- PC$t
 
-#PCSEQ;
-PC <- PC %>% group_by(STUDYID, USUBJID) %>% mutate(PCSEQ = row_number())
+# PCSEQ;
+PC <- PC %>% group_by(STUDYID, USUBJID) %>% dplyr::mutate(PCSEQ = row_number())
 
-#Concentration related
-#Remove neg values due to pre-dose negative time
+# Concentration related
+# Remove neg values due to pre-dose negative time
 PC$Conc <- ifelse(PC$Conc < 0, 0, PC$Conc)
 
 
 PC$PCSTRESN <- PC$Conc
-#Usually as per SAP, only predose BLQ can be set to 0
+
+# Usually as per SAP, only predose BLQ can be set to 0
 PC$PCSTRESN <- ifelse(PC$PCSTRESN < 0.01 & PC$t == -0.5, 0, PC$PCSTRESN)
-#otherwise set it to missing
+
+# otherwise set it to missing
 PC$PCSTRESN <- ifelse(PC$PCSTRESN < 0.01 & PC$t != -0.5, NA, PC$PCSTRESN)
-#set blqs if NA
+
+# set blqs if NA
 PC$Conc <- ifelse(PC$Conc < 0.01, "<BLQ", PC$Conc)
 PC$PCORRES <- PC$Conc
 PC$PCSTRESC <- PC$Conc
 
-#Probably can be done throw factors
+# Probably can be done throw factors
 PC$PCTPT <- ifelse(PC$PCTPTNUM == -0.5, "Pre-dose",
               ifelse(PC$PCTPTNUM == 0.08, "5 Min Post-dose",
                 ifelse(PC$PCTPTNUM == 0.5, "30 Min Post-dose", paste0(PC$PCTPTNUM, "h Post-dose")
@@ -107,10 +115,10 @@ PC$PCDY <- ifelse(PC$t == -0.5, -1,
 PC <- subset(PC, select = c("STUDYID", "DOMAIN", "USUBJID", "PCSEQ", "PCTESTCD", "PCTEST",
             "PCORRES", "PCORRESU", "PCSTRESC", "PCSTRESN", "PCSTRESU",
             "PCNAM", "PCSPEC", "PCLLOQ", "VISIT", "VISITNUM", "PCDTC", "PCDY", "PCTPT", "PCTPTNUM"))
-pc <- PC %>% arrange(STUDYID, USUBJID, PCSEQ)
+pc <- PC %>% ungroup() %>% arrange(STUDYID, USUBJID, PCSEQ)
 
 
-#Some test to look the overall figure
+# Some test to look the overall figure
 plot <- ggplot(pc, aes(x = PCTPTNUM, y = PCSTRESN, group = USUBJID)) + geom_line() +
                                                    geom_point()
 

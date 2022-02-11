@@ -6,19 +6,20 @@ library(ggplot2)
 
 data("pc")
 
-#Calculate subjects with all missing;
-blq_usubjid = pc %>%
-  group_by(STUDYID,DOMAIN,USUBJID) %>%
-  summarise(PPORRES = max(PCSTRESN,na.rm = TRUE))
+# Calculate subjects with all missing;
+blq_usubjid <- pc %>% ungroup() %>%
+  group_by(STUDYID, DOMAIN, USUBJID) %>%
+  dplyr::summarise(PPORRES = max(PCSTRESN, na.rm = TRUE))
 
 #Remove from PC, subjects with all blq (placebos);
-remove_usubjid = blq_usubjid %>% filter(PPORRES == 0)
+remove_usubjid <- blq_usubjid %>% filter(PPORRES == 0)
 
-pc1 = anti_join(pc,remove_usubjid,by=c("STUDYID","DOMAIN","USUBJID"))
-#PP usually only present values for applicable subjects;
-#Calculate Cmax;
-pp_cmax = pc1 %>%
-  group_by(STUDYID,DOMAIN,USUBJID) %>%
+pc1 <- dplyr::anti_join(pc, remove_usubjid, by = c("STUDYID", "DOMAIN", "USUBJID"))
+
+# PP usually only present values for applicable subjects;
+# Calculate Cmax;
+pp_cmax <- pc1 %>%
+  group_by(STUDYID, DOMAIN, USUBJID) %>%
   summarise(CMAX = max(PCSTRESN,na.rm = TRUE))
 
 #Calculate Tmax
@@ -45,17 +46,16 @@ for (idx in 1:nrows){
 }
 
 pp_AUC = pc2 %>%
-  group_by(STUDYID,DOMAIN,USUBJID) %>%
-  summarise(AUC = max(AUC,na.rm = TRUE))
+  dplyr::group_by(STUDYID,DOMAIN,USUBJID) %>%
+  dplyr::summarise(AUC = max(AUC,na.rm = TRUE))
 
 #Elimination rate
-pc3 = merge(pc2,pp_tmax,by=c("STUDYID","DOMAIN","USUBJID"))
-pc3 = pc3 %>%
-  filter(PCTPTNUM>=TMAX)
+pc3 <- merge(pc2, pp_tmax, by = c("STUDYID","DOMAIN","USUBJID"))
+pc3 <- pc3 %>% filter(PCTPTNUM >= TMAX)
 
-pp_npts = pc3 %>%
-  group_by(STUDYID,DOMAIN,USUBJID) %>%
-  summarise(npts = n())
+pp_npts <- pc3 %>%
+  dplyr::group_by(STUDYID, DOMAIN, USUBJID) %>%
+  dplyr::summarise(npts = n())
 
 # Break up pc3 by usubjid, then fit the specified model to each piece and
 # return a list
@@ -75,14 +75,15 @@ pp_lambda = subset( pp_lambda,select = c("STUDYID","DOMAIN","USUBJID","lambda"))
 
 #AUC_0_inf
 pc4 <- pc3 %>%
-  group_by(STUDYID,DOMAIN,USUBJID) %>%
-  summarise(min = min(PCSTRESN,na.rm = TRUE))
-pp_Clast = pc4
-pp_Clast$Clast = pp_Clast$min
-pp_Clast = subset( pp_Clast,select = c("STUDYID","DOMAIN","USUBJID","Clast"))
+  group_by(STUDYID, DOMAIN, USUBJID) %>%
+  dplyr::mutate(min = min(PCSTRESN,na.rm = TRUE))
 
-pc5 = merge(pc4,pp_Ke,by=c("STUDYID","DOMAIN","USUBJID"))
-pp_AUC_inf = merge(pc5,pp_AUC,by=c("STUDYID","DOMAIN","USUBJID"))
+pp_Clast <- pc4
+pp_Clast$Clast <- pp_Clast$min
+pp_Clast = subset(pp_Clast, select = c("STUDYID","DOMAIN","USUBJID","Clast"))
+
+pc5 = merge(pc4, pp_Ke, by = c("STUDYID","DOMAIN","USUBJID"))
+pp_AUC_inf = merge(pc5, pp_AUC, by = c("STUDYID","DOMAIN","USUBJID"))
 
 pp_AUC_inf$AUC_inf = pp_AUC_inf$AUC + (pp_AUC_inf$min)/pp_AUC_inf$Ke
 pp_AUC_inf = subset( pp_AUC_inf,select = c("STUDYID","DOMAIN","USUBJID","AUC_inf"))
