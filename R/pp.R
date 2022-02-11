@@ -7,8 +7,8 @@ library(ggplot2)
 data("pc")
 
 #Calculate subjects with all missing;
-blq_usubjid = pc %>% 
-  group_by(STUDYID,DOMAIN,USUBJID) %>% 
+blq_usubjid = pc %>%
+  group_by(STUDYID,DOMAIN,USUBJID) %>%
   summarise(PPORRES = max(PCSTRESN,na.rm = TRUE))
 
 #Remove from PC, subjects with all blq (placebos);
@@ -17,12 +17,12 @@ remove_usubjid = blq_usubjid %>% filter(PPORRES == 0)
 pc1 = anti_join(pc,remove_usubjid,by=c("STUDYID","DOMAIN","USUBJID"))
 #PP usually only present values for applicable subjects;
 #Calculate Cmax;
-pp_cmax = pc1 %>% 
-  group_by(STUDYID,DOMAIN,USUBJID) %>% 
+pp_cmax = pc1 %>%
+  group_by(STUDYID,DOMAIN,USUBJID) %>%
   summarise(CMAX = max(PCSTRESN,na.rm = TRUE))
 
 #Calculate Tmax
-pp_tmax <- pc1 %>% 
+pp_tmax <- pc1 %>%
   group_by(STUDYID,DOMAIN,USUBJID) %>%
   filter(PCSTRESN == max(PCSTRESN,na.rm = TRUE)) %>%
   arrange(STUDYID,DOMAIN,USUBJID,PCTPTNUM)
@@ -45,7 +45,7 @@ for (idx in 1:nrows){
 }
 
 pp_AUC = pc2 %>%
-  group_by(STUDYID,DOMAIN,USUBJID) %>% 
+  group_by(STUDYID,DOMAIN,USUBJID) %>%
   summarise(AUC = max(AUC,na.rm = TRUE))
 
 #Elimination rate
@@ -54,9 +54,9 @@ pc3 = pc3 %>%
   filter(PCTPTNUM>=TMAX)
 
 pp_npts = pc3 %>%
-  group_by(STUDYID,DOMAIN,USUBJID) %>% 
+  group_by(STUDYID,DOMAIN,USUBJID) %>%
   summarise(npts = n())
-  
+
 # Break up pc3 by usubjid, then fit the specified model to each piece and
 # return a list
 models <- dlply(pc3, c("STUDYID","DOMAIN","USUBJID"), function(df){ lm(-log(PCSTRESN,base = exp(1)) ~ PCTPTNUM, data = df)})
@@ -75,7 +75,7 @@ pp_lambda = subset( pp_lambda,select = c("STUDYID","DOMAIN","USUBJID","lambda"))
 
 #AUC_0_inf
 pc4 <- pc3 %>%
-  group_by(STUDYID,DOMAIN,USUBJID) %>% 
+  group_by(STUDYID,DOMAIN,USUBJID) %>%
   summarise(min = min(PCSTRESN,na.rm = TRUE))
 pp_Clast = pc4
 pp_Clast$Clast = pp_Clast$min
@@ -135,9 +135,9 @@ PP = rbind(pp_tmax,pp_npts,pp_lambda,pp_Ke,pp_cmax,pp_Clast,pp_AUC,pp_AUC_inf)
 
 #Constant variables
 PP$PPCAT = "COMPARTMENTAL"
-PP$PPSTRESC = PP$PPORRES 
-PP$PPSTRESN = PP$PPORRES 
-PP$PPSTRESU = PP$PPORRESU 
+PP$PPSTRESC = PP$PPORRES
+PP$PPSTRESN = PP$PPORRES
+PP$PPSTRESU = PP$PPORRESU
 PP$PPSPEC = "PLASMA"
 PP$DOMAIN = "PP"
 
@@ -165,4 +165,6 @@ pp = subset(pp,select=c("STUDYID", "DOMAIN", "USUBJID", "PPSEQ", "PPTESTCD","PPT
                       "PPORRES","PPORRESU","PPSTRESC","PPSTRESN","PPSTRESU","PPSPEC","PPRFDTC"))
 
 
-save(pp, file = "pp.rda")
+# ---- Save output ----
+
+save(pp, file = "data/pp.rda", compress = "bzip2")
