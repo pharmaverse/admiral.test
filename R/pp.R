@@ -1,5 +1,5 @@
 library(haven) #Load xpt
-library(plyr)
+#library(plyr)
 library(dplyr) #apply distincts
 library(lubridate)
 library(ggplot2)
@@ -49,6 +49,8 @@ pp_AUC = pc2 %>%
   dplyr::group_by(STUDYID,DOMAIN,USUBJID) %>%
   dplyr::summarise(AUC = max(AUC,na.rm = TRUE))
 
+pc2 <- subset(pc2,select =-AUC)
+
 #Elimination rate
 pc3 <- merge(pc2, pp_tmax, by = c("STUDYID","DOMAIN","USUBJID"))
 pc3 <- pc3 %>% filter(PCTPTNUM >= TMAX)
@@ -59,11 +61,11 @@ pp_npts <- pc3 %>%
 
 # Break up pc3 by usubjid, then fit the specified model to each piece and
 # return a list
-models <- dlply(pc3, c("STUDYID","DOMAIN","USUBJID"), function(df){ lm(-log(PCSTRESN,base = exp(1)) ~ PCTPTNUM, data = df)})
+models <- plyr::dlply(pc3, c("STUDYID","DOMAIN","USUBJID"), function(df){ lm(-log(PCSTRESN,base = exp(1)) ~ PCTPTNUM, data = df)})
 #summarym2=lapply(models,summary)
 #lapply(summarym2,"[[","adj.r.squared") #This provides the Rs
 # Apply coef to each model and return a data frame
-pp_Ke = ldply(models, coef)
+pp_Ke = plyr::ldply(models, coef)
 pp_Ke$Ke = pp_Ke$PCTPTNUM
 pp_Ke = subset( pp_Ke,select = c("STUDYID","DOMAIN","USUBJID","Ke"))
 
