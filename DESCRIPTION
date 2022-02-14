@@ -1,6 +1,6 @@
 Package: admiral.test
 Type: Package
-Title: Test Data for the {admiral} Package
+Title: Test Data for the 'admiral' Package
 Version: 0.1.0
 Authors@R: c(
   person("Thomas", "Neitmann", email = "thomas.neitmann@roche.com", role = c("aut", "cre")),
@@ -9,7 +9,10 @@ Authors@R: c(
   person("GlaxoSmithKline LLC", role = c("cph", "fnd")),
   person("Clinical Data Interchange Standards Consortium", role = "cph")
   )
-Description: A set of SDTM datasets from the CDISC pilot project used for testing inside {admiral}.
+Description: A set of Study Data Tabulation Model (SDTM) datasets from the Clinical
+    Data Interchange Standards Consortium (CDISC) pilot project used for testing
+    and developing Analysis Data Model (ADaM) derivations inside the 'admiral'
+    package.
 License: Apache License (>= 2.0)
 Depends: R (>= 3.5.0)
 Imports:
