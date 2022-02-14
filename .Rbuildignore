@@ -3,4 +3,4 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^LICENSE\.md$
-^inst/data_script/.+\..+$
+^inst/data_scripts/.+\..+$
