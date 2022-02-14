@@ -4,7 +4,9 @@
 \name{eg}
 \alias{eg}
 \title{Electrocardiogram Dataset}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 26669 rows and 24 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 26669 rows and 24 columns.
+}
 \usage{
 eg
 }
