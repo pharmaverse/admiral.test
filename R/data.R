@@ -106,3 +106,10 @@
 #' An example SDG dataset
 #'
 "sdg_db"
+
+#' Subject Visits Dataset
+#'
+#' A SDTM SV dataset from the CDISC pilot project
+#'
+#' @source \url{https://bitbucket-test.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/sv.xpt}
+"sv"
