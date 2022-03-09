@@ -1,6 +1,6 @@
 #TR
-
 library(dplyr)
+library(tidyselect)
 library(admiral)
 library(admiral.test)
 
@@ -175,7 +175,7 @@ ntr3 <- bind_rows(ntr3a, ntr3b, ntr3c)
 # Adding Non Target Result Values Randomly
 ntrorresf <- c("NOT", "UNEQUIVOCAL", "ABSENT", "PRESENT")
 
-ntrespd <- as.data.frame(ntrorresf)
+ntrespd <- tibble::tibble(ntrorresf)
 ntrespd <- ntrespd %>% rename("ntrorres" = "ntrorresf")
 ntrespd$ntresn <- NULL
 ntrespd$ntresn <- row.names(ntrespd)
