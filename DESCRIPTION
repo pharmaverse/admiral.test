@@ -5,6 +5,9 @@ Version: 0.1.2
 Authors@R: c(
   person("Thomas", "Neitmann", email = "thomas.neitmann@roche.com", role = c("aut", "cre")),
   person("Stefan", "Bundfuss", role = "aut"),
+  person("Ross", "Farrugia", role = "ctb"),
+  person("Gopi", "Vegesna", role = "ctb"),
+  person("Sophie", "Shapcott", role = "ctb"),
   person("F. Hoffmann-La Roche AG", role = c("cph", "fnd")),
   person("GlaxoSmithKline LLC", role = c("cph", "fnd")),
   person("Clinical Data Interchange Standards Consortium", role = "cph")
