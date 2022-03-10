@@ -22,7 +22,7 @@ tr <- full_join(tr, supptr1, by = c("STUDYID", "USUBJID", "TRSEQ"))
 # Renaming And Adding TU Variables
 tu1 <- tr %>%
   filter((VISITNUM == 3 | (TRGRPID == "NEW" &
-    !is.na(TRORRES) & TRORRES != "NO"))) %>%
+          !is.na(TRORRES) & TRORRES != "NO"))) %>%
   filter(TRTESTCD != "SUMDIAM") %>%
   rename(
     "TULNKID" = "TRLNKID",
@@ -76,5 +76,7 @@ tu <- tu %>% set_variable_labels(
   TUDTC = "Date/Time of Tumor Identification",
   TUDY = "Study Day of Tumor Identification"
 )
+
+attr(tu, "label") <- "Tumor Identification"
 
 save(tu, file = "data/tu.rda", compress = "bzip2")

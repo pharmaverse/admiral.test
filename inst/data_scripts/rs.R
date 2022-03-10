@@ -207,4 +207,6 @@ rs <- rs %>% set_variable_labels(
   RSDY = "Study Day of Response Assessment"
 )
 
+attr(rs, "label") <- "Disease Response"
+
 save(rs, file = "data/rs.rda", compress = "bzip2")

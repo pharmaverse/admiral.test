@@ -73,7 +73,6 @@ tr3b <- bind_rows(
     "TREVALID" = "RADIOLOGIST 1"
   )
 
-
 tar <- floor(runif(n = nrows, min = 1, max = 5))
 tr3c <- bind_rows(
   (tr2 %>% mutate("tar1" = tar, "TRLNKID" = "R2-T01")),
@@ -108,8 +107,8 @@ tr3 <- tr3 %>% mutate(
     floor(SUBJNO %% 8) == 0 &
       (TREVALID == "RADIOLOGIST 1" | TREVALID == "RADIOLOGIST 2") &
       VISITNUM == 10.1 ~ NA_real_,
-    VISITNUM == 3 ~ TRSTRESN + 5,
-    TRUE ~ TRSTRESN
+      VISITNUM == 3 ~ TRSTRESN + 5,
+      TRUE ~ TRSTRESN
   ),
   "TRORRES" = as.character(TRSTRESN),
   "TRSTRESC" = TRORRES,
@@ -119,7 +118,6 @@ tr3 <- tr3 %>% mutate(
   "TRTESTCD" = "DIAMETER",
   "TRTEST" = "Diameter"
 )
-
 
 # SUMDIAM
 tr3sum <- tr3 %>%
@@ -200,14 +198,12 @@ ntr3 <- merge(ntr3, ntrespd, by = "ntresn") %>%
     "SUBJNO" = as.numeric(substr(USUBJID, 8, 12))
   )
 
-
 # Modifying Non-target Values To Get Some CR In Data
 ntr3 <- ntr3 %>% mutate(
   "TRORRES" = ifelse(floor(SUBJNO %% 5) == 0 &
-    VISITNUM %in% c(9, 10.1), "ABSENT", TRORRES),
+                     VISITNUM %in% c(9, 10.1), "ABSENT", TRORRES),
   "TRSTRESC" = TRORRES
 )
-
 
 # New Lesions - assigning new lesions only on last visit
 new <- floor(runif(n = nrows, min = 21, max = 22))
@@ -312,6 +308,20 @@ supptr <- select(
   )
 )
 
+supptr <- supptr %>% set_variable_labels(
+  STUDYID = "Study Identifier",
+  RDOMAIN = "Related Domain Abbreviation",
+  USUBJID = "Unique Subject Identifier",
+  IDVAR = "Identifying Variable",
+  IDVARVAL = "Identifying Variable Value",
+  QNAM = "Qualifier Variable Name",
+  QLABEL = "Qualifier Variable Label",
+  QVAL = "Data Value",
+  QORIG = "Origin"
+)
+
+attr(supptr, "label") <- "Supplemental Tumor Results"
+
 # Creating TR
 tr <- select(tr7, c(
   STUDYID, DOMAIN, USUBJID, TRSEQ, TRGRPID, TRLNKGRP,
@@ -346,6 +356,8 @@ tr <- tr %>% set_variable_labels(
   TRDTC = "Date/Time of Tumor Measurement",
   TRDY = "Study Day of Tumor Measurement"
 )
+
+attr(tr, "label") <- "Tumor Results"
 
 save(tr, file = "data/tr.rda", compress = "bzip2")
 save(supptr, file = "data/supptr.rda", compress = "bzip2")
