@@ -1,8 +1,12 @@
-#TR
+# TR
+
 library(dplyr)
+library(labelled)
 library(tidyselect)
 library(admiral)
 library(admiral.test)
+
+set.seed(1)
 
 # Reading input data
 data("dm")
@@ -200,7 +204,7 @@ ntr3 <- merge(ntr3, ntrespd, by = "ntresn") %>%
 # Modifying Non-target Values To Get Some CR In Data
 ntr3 <- ntr3 %>% mutate(
   "TRORRES" = ifelse(floor(SUBJNO %% 5) == 0 &
-                       VISITNUM %in% c(9, 10.1), "ABSENT", TRORRES),
+    VISITNUM %in% c(9, 10.1), "ABSENT", TRORRES),
   "TRSTRESC" = TRORRES
 )
 
@@ -315,6 +319,33 @@ tr <- select(tr7, c(
   TRSTRESN, TRSTRESU, TRSTAT, TRREASND, TRMETHOD,
   TREVAL, TREVALID, TRACPTFL, VISITNUM, VISIT, TRDTC, TRDY
 ))
+
+tr <- tr %>% set_variable_labels(
+  STUDYID = "Study Identifier",
+  DOMAIN = "Domain Abbreviation",
+  USUBJID = "Unique Subject Identifier",
+  TRSEQ = "Sequence Number",
+  TRGRPID = "Group ID",
+  TRLNKID = "Link ID",
+  TRLNKGRP = "Link Group",
+  TRTESTCD = "Tumor Assessment Short Name",
+  TRTEST = "Tumor Assessment Test Name",
+  TRORRES = "Result or Finding in Original Units",
+  TRORRESU = "Original Units",
+  TRSTRESC = "Character Result/Finding in Std Format",
+  TRSTRESN = "Numeric Result/Finding in Standard Units",
+  TRSTRESU = "Standard Units",
+  TRSTAT = "Completion Status",
+  TRREASND = "Reason Tumor Measurement Not Performed",
+  TRMETHOD = "Method used to Identify the Tumor",
+  TREVAL = "Evaluator",
+  TREVALID = "Evaluator Identifier",
+  TRACPTFL = "Accepted Record Flag",
+  VISITNUM = "Visit Number",
+  VISIT = "Visit Name",
+  TRDTC = "Date/Time of Tumor Measurement",
+  TRDY = "Study Day of Tumor Measurement"
+)
 
 save(tr, file = "data/tr.rda", compress = "bzip2")
 save(supptr, file = "data/supptr.rda", compress = "bzip2")

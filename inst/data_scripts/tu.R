@@ -1,6 +1,7 @@
-#TU
+# TU
 
 library(dplyr)
+library(labelled)
 library(tidyselect)
 library(admiral)
 library(admiral.test)
@@ -54,5 +55,26 @@ tu <- select(tu2, c(
   TUMETHOD, TUEVAL, TUEVALID, TUACPTFL,
   VISITNUM, VISIT, TUDTC, TUDY
 ))
+
+tu <- tu %>% set_variable_labels(
+  STUDYID = "Study Identifier",
+  DOMAIN = "Domain Abbreviation",
+  USUBJID = "Unique Subject Identifier",
+  TUSEQ = "Sequence Number",
+  TULNKID = "Link ID",
+  TUTESTCD = "Tumor Identification Short Name",
+  TUTEST = "Tumor Identification Test Name",
+  TUORRES = "Tumor Identification Result",
+  TUSTRESC = "Tumor Identification Result Std. Format",
+  TULOC = "Location of the Tumor",
+  TUMETHOD = "Method of Identification",
+  TUEVAL = "Evaluator",
+  TUEVALID = "Evaluator Identifier",
+  TUACPTFL = "Accepted Record Flag",
+  VISITNUM = "Visit Number",
+  VISIT = "Visit Name",
+  TUDTC = "Date/Time of Tumor Identification",
+  TUDY = "Study Day of Tumor Identification"
+)
 
 save(tu, file = "data/tu.rda", compress = "bzip2")

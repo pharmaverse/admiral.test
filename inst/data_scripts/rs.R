@@ -1,6 +1,7 @@
 # RS
 
 library(dplyr)
+library(labelled)
 library(tidyselect)
 library(admiral)
 library(admiral.test)
@@ -183,5 +184,27 @@ rs <- select(rs6, c(
   RSSTAT, RSREASND, RSEVAL, RSEVALID, RSACPTFL,
   VISITNUM, VISIT, RSDTC, RSDY
 ))
+
+rs <- rs %>% set_variable_labels(
+  STUDYID = "Study Identifier",
+  DOMAIN = "Domain Abbreviation",
+  USUBJID = "Unique Subject Identifier",
+  RSSEQ = "Sequence Number",
+  RSLNKGRP = "Link Group",
+  RSTESTCD = "Response Assessment Short Name",
+  RSTEST = "Response Assessment Name",
+  RSCAT = "Category for Response Assessment",
+  RSORRES = "Response Assessment Original Result",
+  RSSTRESC = "Response Assessment Result in Std Format",
+  RSSTAT = "Completion Status",
+  RSREASND = "Reason Response Assessment Not Performed",
+  RSEVAL = "Evaluator",
+  RSEVALID = "Evaluator Identifier",
+  RSACPTFL = "Accepted Record Flag",
+  VISITNUM = "Visit Number",
+  VISIT = "Visit Name",
+  RSDTC = "Date/Time of Response Assessment",
+  RSDY = "Study Day of Response Assessment"
+)
 
 save(rs, file = "data/rs.rda", compress = "bzip2")
