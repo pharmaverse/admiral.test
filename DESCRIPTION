@@ -1,10 +1,15 @@
 Package: admiral.test
 Type: Package
 Title: Test Data for the 'admiral' Package
-Version: 0.1.2
+Version: 0.2.0
 Authors@R: c(
   person("Thomas", "Neitmann", email = "thomas.neitmann@roche.com", role = c("aut", "cre")),
   person("Stefan", "Bundfuss", role = "aut"),
+  person("Ross", "Farrugia", role = "ctb"),
+  person("Gopi", "Vegesna", role = "ctb"),
+  person("Sophie", "Shapcott", role = "ctb"),
+  person("Mahdi", "About", role = "ctb"),
+  person("Antonio", "Rodríguez", role = "ctb"),
   person("F. Hoffmann-La Roche AG", role = c("cph", "fnd")),
   person("GlaxoSmithKline LLC", role = c("cph", "fnd")),
   person("Clinical Data Interchange Standards Consortium", role = "cph")
@@ -21,4 +26,4 @@ Imports:
     rlang
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.2

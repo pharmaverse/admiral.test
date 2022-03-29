@@ -53,12 +53,47 @@
 #' @source \url{https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/mh.xpt}
 "mh"
 
+#' Pharmacokinetics Concentrations Dataset
+#'
+#' A SDTM PC dataset simulated by Antonio Rodríguez Contestí
+#'
+#' @author Antonio Rodríguez Contestí
+"pc"
+
+#' Pharmacokinetic Parameters Dataset
+#'
+#' A SDTM PP dataset simulated by Antonio Rodríguez Contestí
+#'
+#' @author Antonio Rodríguez Contestí
+"pp"
+
 #' Questionnaire Dataset
 #'
 #' A SDTM QS dataset from the CDISC pilot project
 #'
 #' @source \url{https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/qs.xpt}
 "qs"
+
+#' Tumor Identification Dataset
+#'
+#' A SDTM TU dataset simulated by Gopi Vegesna
+#'
+#' @author Gopi Vegesna
+"tu"
+
+#' Tumor Results Dataset
+#'
+#' A SDTM TR dataset simulated by Gopi Vegesna
+#'
+#' @author Gopi Vegesna
+"tr"
+
+#' Disease Response Dataset
+#'
+#' A SDTM RS dataset simulated by Gopi Vegesna
+#'
+#' @author Gopi Vegesna
+"rs"
 
 #' Supplemental Adverse Events Dataset
 #'
@@ -80,6 +115,13 @@
 #'
 #' @source \url{https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/suppdm.xpt}
 "suppdm"
+
+#' Supplemental Tumor Results Dataset
+#'
+#' A SDTM SUPPTR dataset simulated by Gopi Vegesna
+#'
+#' @author Gopi Vegesna
+"supptr"
 
 #' Trial Design Dataset
 #'
@@ -106,3 +148,10 @@
 #' An example SDG dataset
 #'
 "sdg_db"
+
+#' Subject Visits Dataset
+#'
+#' A SDTM SV dataset from the CDISC pilot project
+#'
+#' @source \url{https://bitbucket-test.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/sv.xpt}
+"sv"
