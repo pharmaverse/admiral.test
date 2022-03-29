@@ -1,4 +1,4 @@
-# admiraltest 2.0.0
+# admiraltest 1.1.0
 
 - Extending the test data offering by adding PK datasets - PC and PP (#1) 
 - Adding Oncology test data - RS, TU, TR, SUPPTR (#2)
