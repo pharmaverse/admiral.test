@@ -1,4 +1,4 @@
-Package: admiral.test
+Package: admiraltest
 Type: Package
 Title: Test Data for the 'admiral' Package
 Version: 0.2.0
