@@ -6,7 +6,10 @@
 \alias{admiraltest-package}
 \title{admiraltest: Test Data for the 'admiral' Package}
 \description{
-A set of Study Data Tabulation Model (SDTM) datasets from the Clinical Data Interchange Standards Consortium (CDISC) pilot project used for testing and developing Analysis Data Model (ADaM) derivations inside the 'admiral' package.
+A set of Study Data Tabulation Model (SDTM) datasets from the Clinical
+    Data Interchange Standards Consortium (CDISC) pilot project used for testing
+    and developing Analysis Data Model (ADaM) derivations inside the 'admiral'
+    package.
 }
 \author{
 \strong{Maintainer}: Thomas Neitmann \email{thomas.neitmann@roche.com}
@@ -18,6 +21,11 @@ Authors:
 
 Other contributors:
 \itemize{
+  \item Ross Farrugia [contributor]
+  \item Gopi Vegesna [contributor]
+  \item Sophie Shapcott [contributor]
+  \item Mahdi About [contributor]
+  \item Antonio Rodríguez [contributor]
   \item F. Hoffmann-La Roche AG [copyright holder, funder]
   \item GlaxoSmithKline LLC [copyright holder, funder]
   \item Clinical Data Interchange Standards Consortium [copyright holder]
