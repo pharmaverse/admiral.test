@@ -4,7 +4,7 @@ library(dplyr)
 library(labelled)
 library(tidyselect)
 library(admiral)
-library(admiral.test)
+library(admiraltest)
 
 # Reading input data
 data("tr")

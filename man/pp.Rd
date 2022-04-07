@@ -5,7 +5,7 @@
 \alias{pp}
 \title{Pharmacokinetic Parameters Dataset}
 \format{
-An object of class \code{data.frame} with 2348 rows and 14 columns.
+An object of class \code{data.frame} with 1344 rows and 14 columns.
 }
 \usage{
 pp
