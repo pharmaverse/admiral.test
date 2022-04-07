@@ -57,6 +57,7 @@
 #'
 #' A SDTM PC dataset simulated by Antonio Rodríguez Contestí
 #'
+#' @source \url{https://github.com/pharmaverse/admiral.test/blob/main/data/pc.rda}
 #' @author Antonio Rodríguez Contestí
 "pc"
 
@@ -64,6 +65,7 @@
 #'
 #' A SDTM PP dataset simulated by Antonio Rodríguez Contestí
 #'
+#' @source \url{https://github.com/pharmaverse/admiral.test/blob/main/data/pc.rda}
 #' @author Antonio Rodríguez Contestí
 "pp"
 
