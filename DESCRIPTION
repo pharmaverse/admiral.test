@@ -10,6 +10,7 @@ Authors@R: c(
   person("Sophie", "Shapcott", role = "ctb"),
   person("Mahdi", "About", role = "ctb"),
   person("Antonio", "Rodríguez", role = "ctb"),
+  person("Claudia", "Carlucci", role = "ctb"),
   person("F. Hoffmann-La Roche AG", role = c("cph", "fnd")),
   person("GlaxoSmithKline LLC", role = c("cph", "fnd")),
   person("Clinical Data Interchange Standards Consortium", role = "cph")
