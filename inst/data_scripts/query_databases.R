@@ -58,7 +58,7 @@ smq_db <- bind_rows(pregsmq, bilismq) %>%
   mutate(version = "20.1",
          termvar = "AEDECOD")
 
-save(smq_db, file = "data/smq_db.rda", compress = "bzip2")
+save(smq_db, file = "data/admiral_smq_db.rda", compress = "bzip2")
 
 sdg_db <- tribble(
   ~termname,
@@ -84,4 +84,4 @@ sdg_db <- tribble(
          termvar = "CMDECOD",
          version = "2019-09")
 
-save(sdg_db, file = "data/sdg_db.rda", compress = "bzip2")
+save(sdg_db, file = "data/admiral_sdg_db.rda", compress = "bzip2")

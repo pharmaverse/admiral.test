@@ -79,4 +79,4 @@ tu <- tu %>% set_variable_labels(
 
 attr(tu, "label") <- "Tumor Identification"
 
-save(tu, file = "data/tu.rda", compress = "bzip2")
+save(tu, file = "data/admiral_tu.rda", compress = "bzip2")

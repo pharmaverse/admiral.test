@@ -209,4 +209,4 @@ rs <- rs %>% set_variable_labels(
 
 attr(rs, "label") <- "Disease Response"
 
-save(rs, file = "data/rs.rda", compress = "bzip2")
+save(rs, file = "data/admiral_rs.rda", compress = "bzip2")

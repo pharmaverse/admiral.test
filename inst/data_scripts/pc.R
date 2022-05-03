@@ -129,4 +129,4 @@ plot <- ggplot(pc, aes(x = PCTPTNUM, y = PCSTRESN, group = USUBJID)) +
 
 # ---- Save output ----
 
-save(pc, file = "data/pc.rda", compress = "bzip2")
+save(pc, file = "data/admiral_pc.rda", compress = "bzip2")
