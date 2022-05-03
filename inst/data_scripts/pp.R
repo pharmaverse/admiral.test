@@ -175,5 +175,5 @@ pp <- subset(pp, select = c(
 
 
 # ---- Save output ----
-
-save(pp, file = "data/admiral_pp.rda", compress = "bzip2")
+admiral_pp <- pp
+save(admiral_pp, file = "data/admiral_pp.rda", compress = "bzip2")
