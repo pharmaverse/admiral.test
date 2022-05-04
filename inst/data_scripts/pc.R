@@ -128,5 +128,5 @@ plot <- ggplot(pc, aes(x = PCTPTNUM, y = PCSTRESN, group = USUBJID)) +
   geom_point()
 
 # ---- Save output ----
-
-save(pc, file = "data/pc.rda", compress = "bzip2")
+admiral_pc <- pc
+save(admiral_pc, file = "data/admiral_pc.rda", compress = "bzip2")
