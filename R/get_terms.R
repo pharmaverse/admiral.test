@@ -13,7 +13,7 @@ get_smq_terms <- function(smq_select,
                           keep_id,
                           temp_env) {
   if (is.null(temp_env$smq_db)) {
-    data("smq_db", envir = temp_env)
+    data("admiral_smq_db", envir = temp_env)
   }
   if (!is.null(smq_select$name)) {
     cond_smq <- expr(smq_name == !!smq_select$name)
@@ -51,7 +51,7 @@ get_sdg_terms <- function(sdg_select,
                           keep_id,
                           temp_env) {
   if (is.null(temp_env$sdg_db)) {
-    data("sdg_db", envir = temp_env)
+    data("admiral_sdg_db", envir = temp_env)
   }
   if (!is.null(sdg_select$name)) {
     cond <- expr(sdg_name == !!sdg_select$name)
