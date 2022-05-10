@@ -12,7 +12,7 @@ get_smq_terms <- function(smq_select,
                           version,
                           keep_id,
                           temp_env) {
-  if (is.null(temp_env$smq_db)) {
+  if (is.null(temp_env$admiral_smq_db)) {
     data("admiral_smq_db", envir = temp_env)
   }
   if (!is.null(smq_select$name)) {
@@ -31,7 +31,7 @@ get_smq_terms <- function(smq_select,
     select_id <- NULL
   }
 
-  temp_env$smq_db %>%
+  temp_env$admiral_smq_db %>%
     filter(version == version, !!cond_smq, !!cond_scope) %>%
     transmute(TERM_NAME = termname, TERM_LEVEL = termvar, QUERY_NAME = smq_name, !!!select_id)
 }
@@ -50,7 +50,7 @@ get_sdg_terms <- function(sdg_select,
                           version,
                           keep_id,
                           temp_env) {
-  if (is.null(temp_env$sdg_db)) {
+  if (is.null(temp_env$admiral_sdg_db)) {
     data("admiral_sdg_db", envir = temp_env)
   }
   if (!is.null(sdg_select$name)) {
@@ -64,7 +64,7 @@ get_sdg_terms <- function(sdg_select,
     select_id <- NULL
   }
 
-  temp_env$sdg_db %>%
+  temp_env$admiral_sdg_db %>%
     filter(version == version, !!cond) %>%
     transmute(TERM_NAME = termname, TERM_LEVEL = termvar, QUERY_NAME = sdg_name, !!!select_id)
 }
