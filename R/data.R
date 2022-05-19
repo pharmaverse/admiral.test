@@ -19,13 +19,6 @@
 #' @source \url{https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/dm.xpt}
 "admiral_dm"
 
-#' Disposition Dataset
-#'
-#' A SDTM DS dataset from the CDISC pilot project
-#'
-#' @source \url{https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/ds.xpt}
-"admiral_ds"
-
 #' Electrocardiogram Dataset
 #'
 #' An example of standard SDTM EG dataset to be used in deriving ADEG dataset
