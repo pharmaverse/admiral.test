@@ -1,5 +1,6 @@
 # admiraltest 0.2.0
 
+- Renaming all datasets to `admiral_` (#30) 
 - Extending the test data offering by adding PK datasets - PC and PP (#1) 
 - Adding Oncology test data - RS, TU, TR, SUPPTR (#2)
 - Adding SV from CDISC pilot project (#20)

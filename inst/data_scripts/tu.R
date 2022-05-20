@@ -4,7 +4,7 @@ library(dplyr)
 library(labelled)
 library(tidyselect)
 library(admiral)
-library(admiral.test)
+library(admiraltest)
 
 # Reading input data  --  DUMMY DATA CREATED FROM TR data created from TR
 data("tr")
@@ -79,4 +79,5 @@ tu <- tu %>% set_variable_labels(
 
 attr(tu, "label") <- "Tumor Identification"
 
-save(tu, file = "data/tu.rda", compress = "bzip2")
+admiral_tu <- tu
+save(admiral_tu, file = "data/admiral_tu.rda", compress = "bzip2")

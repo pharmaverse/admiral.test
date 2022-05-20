@@ -4,7 +4,7 @@ library(dplyr)
 library(labelled)
 library(tidyselect)
 library(admiral)
-library(admiral.test)
+library(admiraltest)
 
 # Reading input data
 data("tr")
@@ -209,4 +209,5 @@ rs <- rs %>% set_variable_labels(
 
 attr(rs, "label") <- "Disease Response"
 
-save(rs, file = "data/rs.rda", compress = "bzip2")
+admiral_rs <- rs
+save(admiral_rs, file = "data/admiral_rs.rda", compress = "bzip2")
