@@ -4,9 +4,11 @@
 \name{admiral_pp}
 \alias{admiral_pp}
 \title{Pharmacokinetic Parameters Dataset}
-\format{An object of class \code{data.frame} with 1344 rows and 14 columns.}
+\format{
+An object of class \code{data.frame} with 1344 rows and 14 columns.
+}
 \source{
-\url{https://github.com/pharmaverse/admiral.test/blob/main/data/pc.rda}
+\url{https://github.com/pharmaverse/admiraltest/blob/main/data/pc.rda}
 }
 \usage{
 admiral_pp

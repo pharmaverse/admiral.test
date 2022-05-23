@@ -4,7 +4,9 @@
 \name{admiral_sdg_db}
 \alias{admiral_sdg_db}
 \title{SDG Dataset}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 16 rows and 5 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 16 rows and 5 columns.
+}
 \usage{
 admiral_sdg_db
 }
