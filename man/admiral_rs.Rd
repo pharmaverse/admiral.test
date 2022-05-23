@@ -4,7 +4,9 @@
 \name{admiral_rs}
 \alias{admiral_rs}
 \title{Disease Response Dataset}
-\format{An object of class \code{grouped_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 5703 rows and 19 columns.}
+\format{
+An object of class \code{grouped_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 5703 rows and 19 columns.
+}
 \usage{
 admiral_rs
 }
