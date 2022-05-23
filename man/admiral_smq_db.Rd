@@ -4,7 +4,9 @@
 \name{admiral_smq_db}
 \alias{admiral_smq_db}
 \title{SMQ Dataset}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 44 rows and 6 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 44 rows and 6 columns.
+}
 \usage{
 admiral_smq_db
 }
