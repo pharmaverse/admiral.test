@@ -1,39 +1,25 @@
-# DS
-
-#' Disposition Dataset
-#'
-#' A SDTM DS dataset from the CDISC pilot project
-#'
-#' @source \url{https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/ds.xpt}
-#' "ds"
+# Update DS by adding DSDECOD=RANDOMIZED rows
 
 library(dplyr)
-library(labelled)
 library(tidyselect)
+library(labelled)
 library(admiral)
-library(admiral.test)
+library(metatools)
+library(admiraltest)
 
-set.seed(1)
-
-# Reading input data
-data("dm")
-data("suppdm")
-
-data("ds")
-data("suppds")
+data("raw_ds")
+data("raw_suppds")
 
 # Converting blank to NA
-dm <- convert_blanks_to_na(dm)
-suppdm <- convert_blanks_to_na(suppdm)
-ds1a <- convert_blanks_to_na(ds)
-suppds1a <- convert_blanks_to_na(suppds)
+dm <- convert_blanks_to_na(admiral_dm)
+ds1a <- convert_blanks_to_na(raw_ds)
+suppds1a <- convert_blanks_to_na(raw_suppds)
 
 # Creating full DS data
-ds1 <- ds1a %>%
-  derive_vars_suppqual(suppds1a)
-
-ds1 <- ds1 %>%
-      mutate(DSSEQ = as.numeric(DSSEQ))
+ds1a <-  ds1a %>%
+  mutate(DSSEQ = as.character(DSSEQ))
+ds1 <- combine_supp(ds1a, suppds1a) %>%
+  mutate(DSSEQ = as.numeric(DSSEQ))
 
 # Creating RANDOMIZED records
 dm1 <- select(dm, c(STUDYID, USUBJID, RFSTDTC)) %>%
@@ -62,8 +48,8 @@ ds3 <- ds2 %>%
   group_by(STUDYID, USUBJID) %>%
   mutate(
     DSSEQ = row_number()
-  ) %>%
-  set_variable_labels(
+        ) %>%
+  add_labels(
     DSSEQ = "Sequence Number"
   )
 
@@ -90,7 +76,7 @@ suppds <- select(
   )
 )
 
-suppds <- suppds %>% set_variable_labels(
+admiral_suppds <- suppds %>% add_labels(
   STUDYID = "Study Identifier",
   RDOMAIN = "Related Domain Abbreviation",
   USUBJID = "Unique Subject Identifier",
@@ -102,14 +88,13 @@ suppds <- suppds %>% set_variable_labels(
   QORIG = "Origin"
 )
 
-attr(suppds, "label") <- "Supplemental Disposition"
+attr(admiral_suppds, "label") <- "Supplemental Disposition"
 
 # Creating DS
-dsnames <- names(ds)
-ds <- select(ds3, all_of(dsnames))
+dsnames <- names(ds1a)
+admiral_ds <- select(ds3, all_of(dsnames))
 
-attr(ds, "label") <- "Disposition"
+attr(admiral_ds, "label") <- "Disposition"
 
-save(ds, file = "data/admiral_ds.rda", compress = "bzip2")
-save(suppds, file = "data/admiral_suppds.rda", compress = "bzip2")
-
+save(admiral_ds, file = "data/admiral_ds.rda", compress = "bzip2")
+save(admiral_suppds, file = "data/admiral_suppds.rda", compress = "bzip2")
