@@ -1,6 +1,6 @@
 # admiraltest
 
-Test data for the {admiral} package taken from the [CDISC pilot project](https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse). 
+Test data for the {admiral} package taken from the [CDISC pilot project](https://github.com/cdisc-org/sdtm-adam-pilot-project). 
 As this mostly contains safety data only, over time we will extend this with adding further test data required such as for PK and TA-specific efficacy analyses.
 
 # Installation
