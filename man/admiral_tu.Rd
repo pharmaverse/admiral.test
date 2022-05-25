@@ -4,7 +4,9 @@
 \name{admiral_tu}
 \alias{admiral_tu}
 \title{Tumor Identification Dataset}
-\format{An object of class \code{grouped_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 7734 rows and 18 columns.}
+\format{
+An object of class \code{grouped_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 7734 rows and 18 columns.
+}
 \usage{
 admiral_tu
 }

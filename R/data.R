@@ -2,21 +2,21 @@
 #'
 #' A SDTM AE dataset from the CDISC pilot project
 #'
-#' @source \url{https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/ae.xpt}
+#' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/ae.xpt?raw=true}
 "admiral_ae"
 
 #' Concomitant Medication Dataset
 #'
 #' A SDTM CM dataset from the CDISC pilot project
 #'
-#' @source \url{https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/cm.xpt}
+#' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/cm.xpt?raw=true}
 "admiral_cm"
 
 #' Demography Dataset
 #'
 #' A SDTM DM dataset from the CDISC pilot project
 #'
-#' @source \url{https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/dm.xpt}
+#' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/dm.xpt?raw=true}
 "admiral_dm"
 
 #' Disposition Dataset
@@ -36,28 +36,28 @@
 #'
 #' A SDTM EX dataset from the CDISC pilot project
 #'
-#' @source \url{https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/ex.xpt}
+#' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/ex.xpt?raw=true}
 "admiral_ex"
 
 #' Laboratory Measurements Dataset
 #'
 #' A SDTM LB dataset from the CDISC pilot project
 #'
-#' @source \url{https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/lb.xpt}
+#' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/lb.xpt?raw=true}
 "admiral_lb"
 
 #' Medical History Dataset
 #'
 #' A SDTM MH dataset from the CDISC pilot project
 #'
-#' @source \url{https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/mh.xpt}
+#' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/mh.xpt?raw=true}
 "admiral_mh"
 
 #' Pharmacokinetics Concentrations Dataset
 #'
 #' A SDTM PC dataset simulated by Antonio Rodríguez Contestí
 #'
-#' @source \url{https://github.com/pharmaverse/admiral.test/blob/main/data/pc.rda}
+#' @source \url{https://github.com/pharmaverse/admiraltest/blob/main/data/admiral_pc.rda}
 #' @author Antonio Rodríguez Contestí
 "admiral_pc"
 
@@ -65,7 +65,7 @@
 #'
 #' A SDTM PP dataset simulated by Antonio Rodríguez Contestí
 #'
-#' @source \url{https://github.com/pharmaverse/admiral.test/blob/main/data/pc.rda}
+#' @source \url{https://github.com/pharmaverse/admiraltest/blob/main/data/admiral_pp.rda}
 #' @author Antonio Rodríguez Contestí
 "admiral_pp"
 
@@ -73,7 +73,7 @@
 #'
 #' A SDTM QS dataset from the CDISC pilot project
 #'
-#' @source \url{https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/qs.xpt}
+#' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/qs.xpt?raw=true}
 "admiral_qs"
 
 #' Tumor Identification Dataset
@@ -101,7 +101,7 @@
 #'
 #' A SDTM SUPPAE dataset from the CDISC pilot project
 #'
-#' @source \url{https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/suppae.xpt}
+#' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/suppae.xpt?raw=true}
 "admiral_suppae"
 
 #' Supplemental Disposition Dataset
@@ -115,7 +115,7 @@
 #'
 #' A SDTM SUPPDM dataset from the CDISC pilot project
 #'
-#' @source \url{https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/suppdm.xpt}
+#' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/suppdm.xpt?raw=true}
 "admiral_suppdm"
 
 #' Supplemental Tumor Results Dataset
@@ -129,14 +129,14 @@
 #'
 #' A SDTM TS dataset from the CDISC pilot project
 #'
-#' @source \url{https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/ts.xpt}
+#' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/ts.xpt?raw=true}
 "admiral_ts"
 
 #' Vital Signs Dataset
 #'
 #' A SDTM VS dataset from the CDISC pilot project
 #'
-#' @source \url{https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/vs.xpt}
+#' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/vs.xpt?raw=true}
 "admiral_vs"
 
 #' SMQ Dataset
@@ -155,5 +155,5 @@
 #'
 #' A SDTM SV dataset from the CDISC pilot project
 #'
-#' @source \url{https://bitbucket-test.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/sv.xpt}
+#' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/sv.xpt?raw=true}
 "admiral_sv"
