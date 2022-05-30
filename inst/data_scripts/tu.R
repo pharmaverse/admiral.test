@@ -4,7 +4,7 @@ library(dplyr)
 library(labelled)
 library(tidyselect)
 library(admiral)
-library(admiraltest)
+library(admiral.test)
 
 # Reading input data  --  DUMMY DATA CREATED FROM TR data created from TR
 data("tr")
