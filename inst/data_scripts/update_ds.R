@@ -5,7 +5,7 @@ library(tidyselect)
 library(labelled)
 library(admiral)
 library(metatools)
-library(admiraltest)
+library(admiral.test)
 
 data("raw_ds")
 data("raw_suppds")
