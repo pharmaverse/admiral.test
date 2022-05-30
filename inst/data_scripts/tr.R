@@ -4,7 +4,7 @@ library(dplyr)
 library(labelled)
 library(tidyselect)
 library(admiral)
-library(admiraltest)
+library(admiral.test)
 
 set.seed(1)
 
