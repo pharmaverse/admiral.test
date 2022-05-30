@@ -23,8 +23,8 @@
 #'
 #' A SDTM DS dataset from the CDISC pilot project
 #'
-#' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/ds.xpt?raw=true}
-"admiral_ds"
+#' @source \url{https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/ds.xpt}
+"raw_ds"
 
 #' Electrocardiogram Dataset
 #'
@@ -108,8 +108,8 @@
 #'
 #' A SDTM SUPPDS dataset from the CDISC pilot project
 #'
-#' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/suppds.xpt?raw=true}
-"admiral_suppds"
+#' @source \url{https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/suppds.xpt}
+"raw_suppds"
 
 #' Supplemental Demography Dataset
 #'
