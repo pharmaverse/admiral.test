@@ -7,6 +7,7 @@ library(admiral)
 library(metatools)
 library(admiral.test)
 
+data("admiral_dm")
 data("raw_ds")
 data("raw_suppds")
 
