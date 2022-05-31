@@ -51,7 +51,8 @@ ds3 <- ds2 %>%
         ) %>%
   add_labels(
     DSSEQ = "Sequence Number"
-  )
+  ) %>%
+  ungroup()
 
 # Creating SUPPDS
 suppds1 <- select(ds3, c("STUDYID", "USUBJID", "DSSEQ", "DOMAIN", "ENTCRIT")) %>%
