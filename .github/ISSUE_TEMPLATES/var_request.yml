@@ -21,7 +21,7 @@ body:
     id: input
     attributes:
       label: Relevant Input
-      description: Can you provide a snippet of how the variable should look like?
+      description: Can you provide a snippet of how the variable should look like in the SDTM?
       placeholder: "What should the input look like? REMINDER: no patient level data or company sensitive information should be shared via this open public issue"
     validations:
       required: false
