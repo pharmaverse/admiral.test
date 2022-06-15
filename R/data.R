@@ -26,6 +26,12 @@
 #' @source \url{https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/ds.xpt}
 "raw_ds"
 
+#' Disposition Dataset
+#'
+#' A SDTM DS dataset from the CDISC pilot project with additional records included
+#'
+"admiral_ds"
+
 #' Electrocardiogram Dataset
 #'
 #' An example of standard SDTM EG dataset to be used in deriving ADEG dataset
@@ -52,6 +58,12 @@
 #'
 #' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/mh.xpt?raw=true}
 "raw_mh"
+
+#' Medical History Dataset
+#'
+#' A SDTM MH dataset from the CDISC pilot project with additional variables included
+#'
+"admiral_mh"
 
 #' Pharmacokinetics Concentrations Dataset
 #'
@@ -110,6 +122,13 @@
 #'
 #' @source \url{https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/suppds.xpt}
 "raw_suppds"
+
+#' Supplemental Disposition Dataset
+#'
+#' A SDTM SUPPDS dataset from the CDISC pilot project with additional records included
+#'
+"admiral_suppds"
+
 
 #' Supplemental Demography Dataset
 #'
