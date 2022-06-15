@@ -1,0 +1,43 @@
+name: Variable Request
+description: Enchancement to SDTM datasets
+title: "Variable Request:  <Insert Issue Title Here>"
+labels: ["enhancement", "programming"]
+assignees:
+  - octocat
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this variable request!  We love keeping enhancing our SDTM datasets!
+  - type: textarea
+    id: feature
+    attributes:
+      label: Feature Idea
+      description: Tell us your idea in as few words as possible
+      placeholder: "I need MHOCCUR for derivation in `admiral::admh` script"
+    validations:
+      required: true
+  - type: textarea
+    id: input
+    attributes:
+      label: Relevant Input
+      description: Can you provide a snippet of how the variable should look like?
+      placeholder: "What should the input look like? REMINDER: no patient level data or company sensitive information should be shared via this open public issue"
+    validations:
+      required: false
+  - type: textarea
+    id: output
+    attributes:
+      label: Relevant Output
+      description: Can you provide a snippet of how the ADAM output should look like?
+      placeholder: "What should the output look like? REMINDER: no patient level data or company sensitive information should be shared via this open public issue"
+    validations:
+      required: false
+  - type: textarea
+    id: code
+    attributes:
+      label: Reproducible Example/Pseudo Code
+      description: Can you provide a working example or a sketch of how the code might work in admiral or admiral extensions?
+      placeholder: "We love example code and it will speed up the process! REMINDER: no patient level data or company sensitive information should be shared via this open public issue"
+    validations:
+      required: false
