@@ -3,7 +3,7 @@
 \docType{data}
 \name{raw_ds}
 \alias{raw_ds}
-\title{Disposition Dataset}
+\title{Disposition Dataset-raw}
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 596 rows and 13 columns.
 }

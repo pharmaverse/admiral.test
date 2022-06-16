@@ -4,3 +4,4 @@
 ^\.Rproj\.user$
 ^LICENSE\.md$
 ^inst/data_scripts/.+\..+$
+^.github$

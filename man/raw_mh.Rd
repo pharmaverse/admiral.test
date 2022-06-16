@@ -3,7 +3,7 @@
 \docType{data}
 \name{raw_mh}
 \alias{raw_mh}
-\title{Medical History Dataset}
+\title{Medical History Dataset-raw}
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 1818 rows and 19 columns.
 }

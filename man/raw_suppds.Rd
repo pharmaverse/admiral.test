@@ -3,7 +3,7 @@
 \docType{data}
 \name{raw_suppds}
 \alias{raw_suppds}
-\title{Supplemental Disposition Dataset}
+\title{Supplemental Disposition Dataset-raw}
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 3 rows and 10 columns.
 }

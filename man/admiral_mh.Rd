@@ -3,14 +3,17 @@
 \docType{data}
 \name{admiral_mh}
 \alias{admiral_mh}
-\title{Medical History Dataset}
+\title{Medical History Dataset-updated}
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 1818 rows and 26 columns.
+}
+\source{
+\url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/mh.xpt?raw=true}
 }
 \usage{
 admiral_mh
 }
 \description{
-A SDTM MH dataset from the CDISC pilot project with additional variables included
+An updated SDTM MH dataset that uses the CDISC pilot project
 }
 \keyword{datasets}

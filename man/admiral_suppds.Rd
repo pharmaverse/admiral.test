@@ -3,14 +3,17 @@
 \docType{data}
 \name{admiral_suppds}
 \alias{admiral_suppds}
-\title{Supplemental Disposition Dataset}
+\title{Supplemental Disposition Dataset-updated}
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 3 rows and 9 columns.
+}
+\source{
+\url{https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/suppds.xpt}
 }
 \usage{
 admiral_suppds
 }
 \description{
-A SDTM SUPPDS dataset from the CDISC pilot project with additional records included
+A SDTM SUPPDS dataset from the CDISC pilot project
 }
 \keyword{datasets}
