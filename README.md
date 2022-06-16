@@ -32,7 +32,7 @@ Then there are two main ways to extend the test data, either by adding new datas
 
 ## Updating Existing SDTM Datasets
 
-- Rename the source dataset as `raw_<name>` (e.g. `raw_ds`) and reflect this change in `R/data.R`.
+- Rename the source dataset as `raw_<name>` (e.g. `raw_ds`) and reflect this change in `R/data.R` by including both `raw_<name>` and `admiral_<name>` here.
 - Create a program at `inst/data_scripts` named `update_<name>.R` to read in `raw_<name>`, make the updates, and output as `admiral_<name>`.
 - Add the output dataset to `data` folder
 - Run `devtools::document()` and include the updated `NAMESPACE` and `.Rd` files in `man/`

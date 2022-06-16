@@ -19,7 +19,14 @@
 #' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/dm.xpt?raw=true}
 "admiral_dm"
 
-#' Disposition Dataset
+#' Disposition Dataset-updated
+#'
+#' An updated SDTM DS dataset that uses the CDISC pilot project
+#'
+#' @source \url{https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/ds.xpt}
+"admiral_ds"
+
+#' Disposition Dataset-raw
 #'
 #' A SDTM DS dataset from the CDISC pilot project
 #'
@@ -104,7 +111,14 @@
 #' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/suppae.xpt?raw=true}
 "admiral_suppae"
 
-#' Supplemental Disposition Dataset
+#' Supplemental Disposition Dataset-updated
+#'
+#' A SDTM SUPPDS dataset from the CDISC pilot project
+#'
+#' @source \url{https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/suppds.xpt}
+"admiral_suppds"
+
+#' Supplemental Disposition Dataset-raw
 #'
 #' A SDTM SUPPDS dataset from the CDISC pilot project
 #'
