@@ -23,7 +23,8 @@
 #'
 #' An updated SDTM DS dataset that uses the CDISC pilot project
 #'
-#' @source \url{https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/ds.xpt}
+#' @source \url{https://github.com/pharmaverse/admiral.test/blob/main/data/admiral_ds.rda}
+#' @author Gopi Vegesna
 "admiral_ds"
 
 #' Disposition Dataset-raw
