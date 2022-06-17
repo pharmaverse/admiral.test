@@ -17,7 +17,7 @@ ds1a <- convert_blanks_to_na(raw_ds)
 suppds1a <- convert_blanks_to_na(raw_suppds)
 
 # Creating full DS data
-ds1a <-  ds1a %>%
+ds1a <- ds1a %>%
   mutate(DSSEQ = as.character(DSSEQ))
 ds1 <- combine_supp(ds1a, suppds1a) %>%
   mutate(DSSEQ = as.numeric(DSSEQ))
@@ -49,7 +49,7 @@ ds3 <- ds2 %>%
   group_by(STUDYID, USUBJID) %>%
   mutate(
     DSSEQ = row_number()
-        ) %>%
+  ) %>%
   add_labels(
     DSSEQ = "Sequence Number"
   ) %>%

@@ -54,12 +54,20 @@
 #' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/lb.xpt?raw=true}
 "admiral_lb"
 
-#' Medical History Dataset
+#' Medical History Dataset-updated
+#'
+#' An updated SDTM MH dataset that uses data from the CDISC pilot project
+#'
+#' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/mh.xpt?raw=true}
+#' @author Annie Yang
+"admiral_mh"
+
+#' Medical History Dataset-raw
 #'
 #' A SDTM MH dataset from the CDISC pilot project
 #'
 #' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/mh.xpt?raw=true}
-"admiral_mh"
+"raw_mh"
 
 #' Pharmacokinetics Concentrations Dataset
 #'
