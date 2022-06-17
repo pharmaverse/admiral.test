@@ -1,10 +1,5 @@
 # Add new variables to MH
-library(dplyr)
-library(tidyselect)
-library(labelled)
-library(admiral)
 library(metatools)
-library(admiral.test)
 
 data("admiral_dm")
 data("raw_mh")
@@ -23,22 +18,28 @@ admiral_mh <- mh %>%
   # Add MHPRESP
   mutate(MHPRESP = ifelse(MHTERM == "ALZHEIMER'S DISEASE", "Y", NA_character_)) %>%
   # Add MHOCCUR
-  mutate(MHOCCUR = case_when(MHPRESP == "Y" & !is.na(MHSTDTC) ~ "Y",
-                             MHPRESP == "Y" & is.na(MHSTDTC) ~ "N",
-                             MHPRESP == "N" ~ NA_character_)) %>%
+  mutate(MHOCCUR = case_when(
+    MHPRESP == "Y" & !is.na(MHSTDTC) ~ "Y",
+    MHPRESP == "Y" & is.na(MHSTDTC) ~ "N",
+    MHPRESP == "N" ~ NA_character_
+  )) %>%
   left_join(dm, by = c("STUDYID", "USUBJID")) %>%
   # Add MHSTRTPT
   mutate(MHSTRTPT = if_else(MHTERM == "ALZHEIMER'S DISEASE", NA_character_,
-                           "BEFORE")) %>%
+    "BEFORE"
+  )) %>%
   # Add MHENRTPT
   mutate(MHENRTPT = if_else(as.Date(MHENDTC) < as.Date(RFSTDTC),
-                            "BEFORE", "ONGOING")) %>%
+    "BEFORE", "ONGOING"
+  )) %>%
   # Add MHSTTPT
   mutate(MHSTTPT = if_else(MHTERM == "ALZHEIMER'S DISEASE", NA_character_,
-                           "SCREENING")) %>%
+    "SCREENING"
+  )) %>%
   # Add MHENTPT
   mutate(MHENTPT = if_else(MHTERM == "ALZHEIMER'S DISEASE", "SCREENING",
-                           "FIRST DOSE OF STUDY DRUG")) %>%
+    "FIRST DOSE OF STUDY DRUG"
+  )) %>%
   # Remove variables from DM
   select(-c("RFSTDTC", "RFENDTC")) %>%
   # Variable labels
@@ -47,7 +48,7 @@ admiral_mh <- mh %>%
     MHPRESP = "Medical History Event Pre-Specified",
     MHOCCUR = "Medical History Occurrence",
     MHSTTPT = "Start Reference Time Point",
-    MHENTPT= "End Reference Time Point",
+    MHENTPT = "End Reference Time Point",
     MHSTRTPT = "Start Relative to Reference Time Point",
     MHENRTPT = "End Relative to Reference Time Point"
   )

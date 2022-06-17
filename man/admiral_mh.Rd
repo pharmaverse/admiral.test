@@ -14,6 +14,9 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 admiral_mh
 }
 \description{
-An updated SDTM MH dataset that uses the CDISC pilot project
+An updated SDTM MH dataset that uses data from the CDISC pilot project
+}
+\author{
+Annie Yang
 }
 \keyword{datasets}
