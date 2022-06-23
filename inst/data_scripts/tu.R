@@ -7,11 +7,11 @@ library(admiral)
 library(admiral.test)
 
 # Reading input data  --  DUMMY DATA CREATED FROM TR data created from TR
-data("tr")
-data("supptr")
+data("admiral_tr")
+data("admiral_supptr")
 
-tr <- convert_blanks_to_na(tr)
-supptr <- convert_blanks_to_na(supptr)
+tr <- convert_blanks_to_na(admiral_tr)
+supptr <- convert_blanks_to_na(admiral_supptr)
 
 supptr1 <- supptr %>%
   mutate("DOMAIN" = RDOMAIN, TRSEQ = as.numeric(IDVARVAL), "TRLOC" = QVAL) %>%
@@ -46,7 +46,8 @@ tu1 <- tr %>%
 tu2 <- tu1 %>%
   arrange(STUDYID, USUBJID, VISITNUM, TUDTC, TULNKID) %>%
   group_by(STUDYID, USUBJID) %>%
-  mutate(TUSEQ = row_number())
+  mutate(TUSEQ = row_number()) %>%
+  ungroup()
 
 # Creating TU
 tu <- select(tu2, c(
