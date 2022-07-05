@@ -5,7 +5,8 @@ data("admiral_dm")
 data("raw_mh")
 
 # Convert blank to NA
-dm <- convert_blanks_to_na(admiral_dm) %>% select(STUDYID, USUBJID, RFSTDTC, RFENDTC)
+dm <- convert_blanks_to_na(admiral_dm) %>%
+  select(STUDYID, USUBJID, RFSTDTC, RFENDTC, RFXSTDTC, RFXENDTC)
 mh <- convert_blanks_to_na(raw_mh)
 # Set seed so that result stays the same for each run
 set.seed(1)
@@ -29,7 +30,7 @@ admiral_mh <- mh %>%
     "BEFORE"
   )) %>%
   # Add MHENRTPT
-  mutate(MHENRTPT = if_else(as.Date(MHENDTC) < as.Date(RFSTDTC),
+  mutate(MHENRTPT = if_else(as.Date(MHENDTC) < as.Date(RFXSTDTC),
     "BEFORE", "ONGOING"
   )) %>%
   # Add MHSTTPT
@@ -40,8 +41,18 @@ admiral_mh <- mh %>%
   mutate(MHENTPT = if_else(MHTERM == "ALZHEIMER'S DISEASE", "SCREENING",
     "FIRST DOSE OF STUDY DRUG"
   )) %>%
+  # Add MHENRF
+  mutate(MHENRF = case_when(
+    as.Date(MHENDTC) < as.Date(RFSTDTC) ~ "BEFORE",
+    as.Date(MHENDTC) > as.Date(RFENDTC) ~ "AFTER",
+    is.na(MHENDTC) ~ NA_character_,
+    TRUE ~ "DURING"
+  )) %>%
+  # Add MHSTAT
+  mutate(MHSTAT = ifelse(MHPRESP == "Y" & is.na(MHOCCUR), "NOT DONE",
+                         NA_character_)) %>%
   # Remove variables from DM
-  select(-c("RFSTDTC", "RFENDTC")) %>%
+  select(-c("RFSTDTC", "RFENDTC", "RFXSTDTC", "RFXENDTC")) %>%
   # Variable labels
   add_labels(
     MHENDTC = "End Date/Time of Medical History Event",
@@ -50,7 +61,9 @@ admiral_mh <- mh %>%
     MHSTTPT = "Start Reference Time Point",
     MHENTPT = "End Reference Time Point",
     MHSTRTPT = "Start Relative to Reference Time Point",
-    MHENRTPT = "End Relative to Reference Time Point"
+    MHENRTPT = "End Relative to Reference Time Point",
+    MHENRF = "End Relative to Reference Period",
+    MHSTAT = "Completion Status"
   )
 
 attr(admiral_mh, "label") <- "Medical History"
