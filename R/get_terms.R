@@ -60,17 +60,19 @@ get_sdg_terms <- function(sdg_select,
     data("admiral_sdg_db", envir = temp_env)
   }
   if (!is.null(sdg_select$name)) {
-    cond <- expr(sdg_name == !!sdg_select$name)
+    is_in_sdq <- temp_env$admiral_sdg_db$sdg_name == sdg_select$name
   } else {
-    cond <- expr(sdg_id == !!sdg_select$id)
+    is_in_sdq <- temp_env$admiral_sdg_db$sdg_id == sdg_select$id
   }
   if (keep_id) {
-    select_id <- exprs(QUERY_ID = sdg_id)
+    select_id <- c(QUERY_ID = "sdg_id")
   } else {
     select_id <- NULL
   }
+  keep_cols <- c(TERM_NAME = "termname", TERM_LEVEL = "termvar", QUERY_NAME = "sdg_name", select_id)
 
-  temp_env$admiral_sdg_db %>%
-    filter(version == version, !!cond) %>%
-    transmute(TERM_NAME = termname, TERM_LEVEL = termvar, QUERY_NAME = sdg_name, !!!select_id)
+  structure(
+    temp_env$admiral_sdg_db[is_in_sdq, keep_cols],
+    names = names(keep_cols)
+  )
 }
