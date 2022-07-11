@@ -26,15 +26,11 @@ get_smq_terms <- function(smq_select,
     is_in_scope <- rep(TRUE, nrow(temp_env$admiral_smq_db))
   }
   if (keep_id) {
-    keep_cols <- c(
-      TERM_NAME = "termname",
-      TERM_LEVEL = "termvar",
-      QUERY_NAME = "smq_name",
-      QUERY_ID = "smq_id"
-    )
+    select_id <- c(QUERY_ID = "smq_id")
   } else {
-    keep_cols <- c(TERM_NAME = "termname", TERM_LEVEL = "termvar", QUERY_NAME = "smq_name")
+    select_id <- NULL
   }
+  keep_cols <- c(TERM_NAME = "termname", TERM_LEVEL = "termvar", QUERY_NAME = "smq_name", select_id)
 
   structure(
     temp_env$admiral_smq_db[is_in_smq & is_in_scope, keep_cols],
