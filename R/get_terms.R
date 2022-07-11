@@ -16,24 +16,30 @@ get_smq_terms <- function(smq_select,
     data("admiral_smq_db", envir = temp_env)
   }
   if (!is.null(smq_select$name)) {
-    cond_smq <- expr(smq_name == !!smq_select$name)
+    is_in_smq <- temp_env$admiral_smq_db$smq_name == smq_select$name
   } else {
-    cond_smq <- expr(smq_id == !!smq_select$id)
+    is_in_smq <- temp_env$admiral_smq_db$smq_id == smq_select$id
   }
   if (smq_select$scope == "NARROW") {
-    cond_scope <- expr(scope == "narrow")
+    is_in_scope <- temp_env$admiral_smq_db$scope == "narrow"
   } else {
-    cond_scope <- TRUE
+    is_in_scope <- rep(TRUE, nrow(temp_env$admiral_smq_db))
   }
   if (keep_id) {
-    select_id <- exprs(QUERY_ID = smq_id)
+    keep_cols <- c(
+      TERM_NAME = "termname",
+      TERM_LEVEL = "termvar",
+      QUERY_NAME = "smq_name",
+      QUERY_ID = "smq_id"
+    )
   } else {
-    select_id <- NULL
+    keep_cols <- c(TERM_NAME = "termname", TERM_LEVEL = "termvar", QUERY_NAME = "smq_name")
   }
 
-  temp_env$admiral_smq_db %>%
-    filter(version == version, !!cond_smq, !!cond_scope) %>%
-    transmute(TERM_NAME = termname, TERM_LEVEL = termvar, QUERY_NAME = smq_name, !!!select_id)
+  structure(
+    temp_env$admiral_smq_db[is_in_smq & is_in_scope, keep_cols],
+    names = names(keep_cols)
+  )
 }
 
 #' An example function as expected by the `get_smq_fun` parameter of
