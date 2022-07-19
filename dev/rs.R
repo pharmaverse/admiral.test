@@ -159,7 +159,7 @@ rs5 <- bind_rows(
   ) %>%
   mutate(
     "DOMAIN" = "RS",
-    "RSCAT" = "RECISIT 1.1",
+    "RSCAT" = "RECIST 1.1",
     "RSSTRESC" = RSORRES,
     "RSTEST" = case_when(
       RSTESTCD == "TRGRESP" ~ "Target Response",
