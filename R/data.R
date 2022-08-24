@@ -49,10 +49,18 @@
 
 #' Laboratory Measurements Dataset
 #'
+#' An updated SDTM LB dataset that uses data from the CDISC pilot project
+#'
+#' @source \url{https://github.com/pharmaverse/admiral.test/blob/main/data/admiral_lb.rda}}
+#' @author Annie Yang
+"admiral_lb"
+
+#' Laboratory Measurements Dataset
+#'
 #' A SDTM LB dataset from the CDISC pilot project
 #'
 #' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/lb.xpt?raw=true}
-"admiral_lb"
+"raw_lb"
 
 #' Medical History Dataset-updated
 #'
