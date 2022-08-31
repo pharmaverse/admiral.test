@@ -51,7 +51,7 @@
 #'
 #' An updated SDTM LB dataset that uses data from the CDISC pilot project
 #'
-#' @source \url{https://github.com/pharmaverse/admiral.test/blob/main/data/admiral_lb.rda}}
+#' @source \url{https://github.com/pharmaverse/admiral.test/blob/main/data/admiral_lb.rda}
 #' @author Annie Yang
 "admiral_lb"
 
