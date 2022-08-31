@@ -4,8 +4,10 @@ library(dplyr) # apply distincts
 library(lubridate)
 library(ggplot2)
 
-data("ex")
-data("dm")
+data("admiral_ex")
+data("admiral_dm")
+ex <- admiral_ex
+dm <- admiral_dm
 
 # Remove screen failures, they will not make it to drug infusion
 dm1 <- dm %>%
@@ -105,7 +107,7 @@ PC$PCTPT <- ifelse(PC$PCTPTNUM == -0.5, "Pre-dose",
   )
 )
 
-PC$PCDTC <- as.Date(PC$EXSTDTC) + minutes(round(PC$t * 60))
+PC$PCDTC <- format(as.Date(PC$EXSTDTC) + minutes(round(PC$t * 60)), "%Y-%m-%dT%H:%M:%S")
 PC$PCDY <- ifelse(PC$t == -0.5, -1,
   ifelse(PC$t == 48, 3,
     ifelse(PC$t >= 24, 2, 1)
