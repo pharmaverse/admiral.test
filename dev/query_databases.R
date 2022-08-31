@@ -23,9 +23,12 @@ pregsmq <- tribble(
   "Congenital pulmonary hypertension", "narrow",
   "Retinopathy congenital", "narrow",
   "Congenital acrochordon", "narrow",
-  "Bartter's syndrome", "narrow") %>%
-  mutate(smq_name = "Pregnancy and neonatal topics (SMQ)",
-         smq_id = 20000185L)
+  "Bartter's syndrome", "narrow"
+) %>%
+  mutate(
+    smq_name = "Pregnancy and neonatal topics (SMQ)",
+    smq_id = 20000185L
+  )
 
 bilismq <- tribble(
   ~termname, ~scope,
@@ -52,11 +55,15 @@ bilismq <- tribble(
   "Biliary adenoma", "narrow",
   "Biliary adenoma", "broad",
 ) %>%
-  mutate(smq_name = "Biliary neoplasms (SMQ)",
-         smq_id = 20000121L)
+  mutate(
+    smq_name = "Biliary neoplasms (SMQ)",
+    smq_id = 20000121L
+  )
 smq_db <- bind_rows(pregsmq, bilismq) %>%
-  mutate(version = "20.1",
-         termvar = "AEDECOD")
+  mutate(
+    version = "20.1",
+    termvar = "AEDECOD"
+  )
 
 admiral_smq_db <- smq_db
 save(admiral_smq_db, file = "data/admiral_smq_db.rda", compress = "bzip2")
@@ -80,10 +87,12 @@ sdg_db <- tribble(
   "DERSALAZINE",
   "DERSALAZINE SODIUM"
 ) %>%
-  mutate(sdg_name = "5-aminosalicylates for ulcerative colitis",
-         sdg_id = 220L,
-         termvar = "CMDECOD",
-         version = "2019-09")
+  mutate(
+    sdg_name = "5-aminosalicylates for ulcerative colitis",
+    sdg_id = 220L,
+    termvar = "CMDECOD",
+    version = "2019-09"
+  )
 
 admiral_sdg_db <- sdg_db
 save(admiral_sdg_db, file = "data/admiral_sdg_db.rda", compress = "bzip2")
