@@ -107,8 +107,8 @@ tr3 <- tr3 %>% mutate(
     floor(SUBJNO %% 8) == 0 &
       (TREVALID == "RADIOLOGIST 1" | TREVALID == "RADIOLOGIST 2") &
       VISITNUM == 10.1 ~ NA_real_,
-      VISITNUM == 3 ~ TRSTRESN + 5,
-      TRUE ~ TRSTRESN
+    VISITNUM == 3 ~ TRSTRESN + 5,
+    TRUE ~ TRSTRESN
   ),
   "TRORRES" = as.character(TRSTRESN),
   "TRSTRESC" = TRORRES,
@@ -201,7 +201,7 @@ ntr3 <- merge(ntr3, ntrespd, by = "ntresn") %>%
 # Modifying Non-target Values To Get Some CR In Data
 ntr3 <- ntr3 %>% mutate(
   "TRORRES" = ifelse(floor(SUBJNO %% 5) == 0 &
-                     VISITNUM %in% c(9, 10.1), "ABSENT", TRORRES),
+    VISITNUM %in% c(9, 10.1), "ABSENT", TRORRES),
   "TRSTRESC" = TRORRES
 )
 
@@ -272,7 +272,7 @@ tr7 <- tr6 %>%
     "TRSTAT" = case_when(is.na(TRORRES) ~ "NOT DONE"),
     "TRLOC" = ifelse(!is.na(TRORRES) & TRORRES == "NOT APPLICABLE", NA, TRLOC),
     "TRREASND" = ifelse(TRSTAT == "NOT DONE",
-                        "NOT ASSESSABLE: Image obscured", NA
+      "NOT ASSESSABLE: Image obscured", NA
     ),
     "TRORRESU" = ifelse(is.na(TRORRES) & TRGRPID == "TARGET", NA, TRORRESU),
     "TRSTRESU" = ifelse(is.na(TRORRES) & TRGRPID == "TARGET", NA, TRSTRESU),

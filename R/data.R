@@ -19,12 +19,20 @@
 #' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/dm.xpt?raw=true}
 "admiral_dm"
 
-#' Disposition Dataset
+#' Disposition Dataset-updated
+#'
+#' An updated SDTM DS dataset that uses the CDISC pilot project
+#'
+#' @source \url{https://github.com/pharmaverse/admiral.test/blob/main/data/admiral_ds.rda}
+#' @author Gopi Vegesna
+"admiral_ds"
+
+#' Disposition Dataset-raw
 #'
 #' A SDTM DS dataset from the CDISC pilot project
 #'
 #' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/ds.xpt?raw=true}
-"admiral_ds"
+"raw_ds"
 
 #' Electrocardiogram Dataset
 #'
@@ -41,17 +49,33 @@
 
 #' Laboratory Measurements Dataset
 #'
+#' An updated SDTM LB dataset that uses data from the CDISC pilot project
+#'
+#' @source \url{https://github.com/pharmaverse/admiral.test/blob/main/data/admiral_lb.rda}
+#' @author Annie Yang
+"admiral_lb"
+
+#' Laboratory Measurements Dataset
+#'
 #' A SDTM LB dataset from the CDISC pilot project
 #'
 #' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/lb.xpt?raw=true}
-"admiral_lb"
+"raw_lb"
 
-#' Medical History Dataset
+#' Medical History Dataset-updated
+#'
+#' An updated SDTM MH dataset that uses data from the CDISC pilot project
+#'
+#' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/mh.xpt?raw=true}
+#' @author Annie Yang
+"admiral_mh"
+
+#' Medical History Dataset-raw
 #'
 #' A SDTM MH dataset from the CDISC pilot project
 #'
 #' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/mh.xpt?raw=true}
-"admiral_mh"
+"raw_mh"
 
 #' Pharmacokinetics Concentrations Dataset
 #'
@@ -104,12 +128,19 @@
 #' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/suppae.xpt?raw=true}
 "admiral_suppae"
 
-#' Supplemental Disposition Dataset
+#' Supplemental Disposition Dataset-updated
 #'
 #' A SDTM SUPPDS dataset from the CDISC pilot project
 #'
 #' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/suppds.xpt?raw=true}
 "admiral_suppds"
+
+#' Supplemental Disposition Dataset-raw
+#'
+#' A SDTM SUPPDS dataset from the CDISC pilot project
+#'
+#' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/suppds.xpt?raw=true}
+"raw_suppds"
 
 #' Supplemental Demography Dataset
 #'

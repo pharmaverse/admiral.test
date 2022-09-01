@@ -3,17 +3,20 @@
 \docType{data}
 \name{admiral_ds}
 \alias{admiral_ds}
-\title{Disposition Dataset}
+\title{Disposition Dataset-updated}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 596 rows and 13 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 850 rows and 13 columns.
 }
 \source{
-\url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/ds.xpt?raw=true}
+\url{https://github.com/pharmaverse/admiral.test/blob/main/data/admiral_ds.rda}
 }
 \usage{
 admiral_ds
 }
 \description{
-A SDTM DS dataset from the CDISC pilot project
+An updated SDTM DS dataset that uses the CDISC pilot project
+}
+\author{
+Gopi Vegesna
 }
 \keyword{datasets}

@@ -7,10 +7,10 @@ library(admiral)
 library(admiral.test)
 
 # Reading input data
-data("tr")
+data("admiral_tr")
 
 # Converting blank to NA
-tr <- convert_blanks_to_na(tr)
+tr <- convert_blanks_to_na(admiral_tr)
 
 keyvar <- c(
   "STUDYID", "USUBJID", "TREVAL", "TREVALID",
@@ -60,7 +60,8 @@ ntar <- tr %>%
   rename("NTAR" = "TRORRES") %>%
   group_by(STUDYID, USUBJID, TREVAL, TREVALID, VISIT, VISITNUM) %>%
   arrange(NTARN) %>%
-  do(tail(., 1))
+  do(tail(., 1)) %>%
+  ungroup()
 
 ntrgresp <- ntar %>% mutate(
   "NTRGRESP" = case_when(
@@ -84,7 +85,8 @@ nle <- tr %>%
   rename("NEWL" = "TRORRES") %>%
   group_by(STUDYID, USUBJID, TREVAL, TREVALID, VISIT, VISITNUM) %>%
   arrange(NLRN) %>%
-  do(tail(., 1))
+  do(tail(., 1)) %>%
+  ungroup()
 
 newlprog <- nle %>% mutate(
   "NEWLPROG" = NEWL,
@@ -157,7 +159,7 @@ rs5 <- bind_rows(
   ) %>%
   mutate(
     "DOMAIN" = "RS",
-    "RSCAT" = "RECISIT 1.1",
+    "RSCAT" = "RECIST 1.1",
     "RSSTRESC" = RSORRES,
     "RSTEST" = case_when(
       RSTESTCD == "TRGRESP" ~ "Target Response",
@@ -175,7 +177,8 @@ rs6 <- rs5 %>%
     RSEVAL, RSEVALID, RSLNKGRP, RSTESTCD
   ) %>%
   group_by(STUDYID, USUBJID) %>%
-  mutate(RSSEQ = row_number())
+  mutate(RSSEQ = row_number()) %>%
+  ungroup()
 
 # Creating RS
 rs <- select(rs6, c(
