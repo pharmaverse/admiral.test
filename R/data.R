@@ -31,7 +31,7 @@
 #'
 #' A SDTM DS dataset from the CDISC pilot project
 #'
-#' @source \url{https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/ds.xpt}
+#' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/ds.xpt?raw=true}
 "raw_ds"
 
 #' Electrocardiogram Dataset
@@ -132,14 +132,14 @@
 #'
 #' A SDTM SUPPDS dataset from the CDISC pilot project
 #'
-#' @source \url{https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/suppds.xpt}
+#' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/suppds.xpt?raw=true}
 "admiral_suppds"
 
 #' Supplemental Disposition Dataset-raw
 #'
 #' A SDTM SUPPDS dataset from the CDISC pilot project
 #'
-#' @source \url{https://bitbucket.cdisc.org/projects/CED/repos/sdtm-adam-pilot-project/browse/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/suppds.xpt}
+#' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/suppds.xpt?raw=true}
 "raw_suppds"
 
 #' Supplemental Demography Dataset
