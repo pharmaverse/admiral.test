@@ -1,3 +1,12 @@
+# admiral.test 0.3.0
+
+- Inserted "T" in PCDTC (#73) 
+- Refactor functions in get_terms.R to only use base R (#70) 
+- Fix typo in RSCAT (#65)
+- Moved updating scripts to dev folder (#62)
+- LB update for percentile differences (#52)
+- Add variables to MH for more rich admiral mh template script (#51)
+
 # admiral.test 0.2.0
 
 - Renaming all datasets to `admiral_` (#30) 
