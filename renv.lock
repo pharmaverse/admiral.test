@@ -13,7 +13,7 @@
       "Package": "MASS",
       "Version": "7.3-56",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "RSPM",
       "Hash": "af0e1955cb80bb36b7988cc657db261e",
       "Requirements": []
     },
@@ -21,7 +21,7 @@
       "Package": "Matrix",
       "Version": "1.4-1",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "RSPM",
       "Hash": "699c47c606293bdfbc9fd78a93c9c8fe",
       "Requirements": []
     },
@@ -101,7 +101,7 @@
       "Package": "cpp11",
       "Version": "0.4.2",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "RSPM",
       "Hash": "fa53ce256cd280f468c080a58ea5ba8c",
       "Requirements": []
     },
@@ -149,7 +149,7 @@
       "Package": "farver",
       "Version": "2.1.1",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "RSPM",
       "Hash": "8106d78941f34855c440ddb946b8f7a5",
       "Requirements": []
     },
@@ -229,7 +229,7 @@
       "Package": "lattice",
       "Version": "0.20-45",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "RSPM",
       "Hash": "b64cdbb2b340437c4ee047a1f4c4377b",
       "Requirements": []
     },
@@ -261,7 +261,7 @@
       "Package": "mgcv",
       "Version": "1.8-40",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "RSPM",
       "Hash": "c6b2fdb18cf68ab613bd564363e1ba0d",
       "Requirements": []
     },
@@ -277,7 +277,7 @@
       "Package": "nlme",
       "Version": "3.1-157",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "RSPM",
       "Hash": "dbca60742be0c9eddc5205e5c7ca1f44",
       "Requirements": []
     },
@@ -301,7 +301,7 @@
       "Package": "prettyunits",
       "Version": "1.1.1",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "RSPM",
       "Hash": "95ef9167b75dde9d2ccc3c7528393e7e",
       "Requirements": []
     },
@@ -341,7 +341,7 @@
       "Package": "rematch",
       "Version": "1.0.1",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "RSPM",
       "Hash": "c66b930d20bb6d858cd18e1cebcfae5c",
       "Requirements": []
     },
@@ -389,6 +389,7 @@
       "Package": "styler",
       "Version": "1.7.0",
       "Source": "Repository",
+      "Repository": "RSPM",
       "Requirements": []
     },
     "tibble": {
