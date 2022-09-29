@@ -68,6 +68,11 @@ jobs:
     name: Check
     uses: pharmaverse/admiralci/.github/workflows/r-cmd-check.yml@main
     if: github.event_name == 'pull_request'
+    with:
+      # Control how you want the errors to manifest
+      # by supplying the 'error_on' parameter to
+      # rcmdcheck::rcmdcheck() here.
+      error-on: note
   docs:
     name: Documentation
     uses: pharmaverse/admiralci/.github/workflows/pkgdown.yml@main
@@ -78,6 +83,8 @@ jobs:
       # Note that if you have multiple versions of docs,
       # your URL links are likely to break due to path changes
       skip-multiversion-docs: false
+      # Ref to use for the multiversion docs landing page
+      multiversion-docs-landing-page: main
   linter:
     name: Lint
     uses: pharmaverse/admiralci/.github/workflows/lintr.yml@main
