@@ -2,6 +2,15 @@
 ^renv\.lock$
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^pkgdown$
+^_pkgdown\.yml$
+^.github$
+^.lintr$
+^.*\.Rproj$
+^\.Rproj\.user$
 ^LICENSE\.md$
 ^.github$
 ^dev$
+^admiral.test\.Rcheck$
+^admiral.test.*\.tar\.gz$
+^admiral.test.*\.tgz$
