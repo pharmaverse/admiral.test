@@ -51,7 +51,7 @@
 #'
 #' An updated SDTM LB dataset that uses data from the CDISC pilot project
 #'
-#' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/lb.xpt?raw=true}}
+#' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/lb.xpt?raw=true}
 #' @author Annie Yang
 "admiral_lb"
 
