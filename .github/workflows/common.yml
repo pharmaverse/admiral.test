@@ -72,7 +72,7 @@ jobs:
       r-version: $R_VERSION
   check:
     name: Check
-    uses: pharmaverse/admiralci/.github/workflows/r-cmd-check.yml@main
+    uses: pharmaverse/admiralci/.github/workflows/r-cmd-check.yml@rlib_v2
     if: github.event_name == 'pull_request'
     with:
       # Control how you want the errors to manifest
