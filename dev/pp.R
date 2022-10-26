@@ -2,6 +2,9 @@ library(haven) # Load xpt
 library(dplyr) # apply distincts
 library(lubridate)
 library(ggplot2)
+library(labelled)
+library(admiral)
+library(admiral.test)
 
 data("pc")
 
@@ -136,7 +139,7 @@ pp_tmax$PPORRES <- pp_tmax$TMAX
 # R2ADJ	C85553	R Squared Adjusted
 
 # Join all data
-PP <- rbind(pp_tmax, pp_npts, pp_lambda, pp_Ke, pp_cmax, pp_Clast, pp_AUC, pp_AUC_inf)
+PP <- bind_rows(pp_tmax, pp_npts, pp_lambda, pp_Ke, pp_cmax, pp_Clast, pp_AUC, pp_AUC_inf)
 
 # Constant variables
 PP$PPCAT <- "COMPARTMENTAL"
@@ -149,6 +152,7 @@ PP$DOMAIN <- "PP"
 # Sort
 pp <- PP %>%
   arrange(STUDYID, USUBJID, PPTESTCD)
+
 # PPSEQ;
 pp <- pp %>%
   group_by(STUDYID, USUBJID) %>%
@@ -172,6 +176,26 @@ pp <- subset(pp, select = c(
   "STUDYID", "DOMAIN", "USUBJID", "PPSEQ", "PPTESTCD", "PPTEST", "PPCAT",
   "PPORRES", "PPORRESU", "PPSTRESC", "PPSTRESN", "PPSTRESU", "PPSPEC", "PPRFDTC"
 ))
+
+#add labels
+pp <- pp %>%
+  set_variable_labels(
+    STUDYID = "Study Identifier",
+    DOMAIN = "Domain Abbreviation",
+    USUBJID = "Unique Subject Identifier",
+    PPSEQ = "Sequence Number",
+    PPTESTCD = "Parameter Short Name",
+    PPTEST = "Parameter Name",
+    PPCAT = "Parameter Category",
+    PPORRES = "Result or Finding in Original Units",
+    PPORRESU = "Original Units",
+    PPSTRESC = "Character Result/Finding in Std Format",
+    PPSTRESN = "Numeric Result/Finding in Standard Units",
+    PPSTRESU = "Standard Units",
+    PPSPEC = "Specimen Material Type",
+    PPRFDTC = "Date/Time of Reference Point"
+  )
+
 
 
 # ---- Save output ----
