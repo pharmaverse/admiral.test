@@ -1,26 +1,26 @@
-#' An example function as expected by the `get_smq_fun` parameter of
+#' An example function as expected by the `get_terms_fun` parameter of
 #' `admiral::create_query_data()`
 #'
-#' @param smq_select An smq_select object defining the terms
+#' @param basket_select An basket_select object defining the terms
 #'
 #' @param version MedDRA version
 #'
 #' @param keep_id Should `QUERY_ID` be included in the output?
 #'
 #' @param temp_env Temporary environment
-get_smq_terms <- function(smq_select,
+get_smq_terms <- function(basket_select,
                           version,
                           keep_id,
                           temp_env) {
   if (is.null(temp_env$admiral_smq_db)) {
     data("admiral_smq_db", envir = temp_env)
   }
-  if (!is.null(smq_select$name)) {
-    is_in_smq <- temp_env$admiral_smq_db$smq_name == smq_select$name
+  if (!is.null(basket_select$name)) {
+    is_in_smq <- temp_env$admiral_smq_db$smq_name == basket_select$name
   } else {
-    is_in_smq <- temp_env$admiral_smq_db$smq_id == smq_select$id
+    is_in_smq <- temp_env$admiral_smq_db$smq_id == basket_select$id
   }
-  if (smq_select$scope == "NARROW") {
+  if (basket_select$scope == "NARROW") {
     is_in_scope <- temp_env$admiral_smq_db$scope == "narrow"
   } else {
     is_in_scope <- rep(TRUE, nrow(temp_env$admiral_smq_db))
@@ -38,27 +38,27 @@ get_smq_terms <- function(smq_select,
   )
 }
 
-#' An example function as expected by the `get_smq_fun` parameter of
+#' An example function as expected by the `get_terms_fun` parameter of
 #' `admiral::create_query_data()`
 #'
-#' @param sdg_select An sdg_select object defining the terms
+#' @param basket_select An basket_select object defining the terms
 #'
 #' @param version SDG version
 #'
 #' @param keep_id Should `QUERY_ID` be included in the output?
 #'
 #' @param temp_env Temporary environment
-get_sdg_terms <- function(sdg_select,
+get_sdg_terms <- function(basket_select,
                           version,
                           keep_id,
                           temp_env) {
   if (is.null(temp_env$admiral_sdg_db)) {
     data("admiral_sdg_db", envir = temp_env)
   }
-  if (!is.null(sdg_select$name)) {
-    is_in_sdq <- temp_env$admiral_sdg_db$sdg_name == sdg_select$name
+  if (!is.null(basket_select$name)) {
+    is_in_sdq <- temp_env$admiral_sdg_db$sdg_name == basket_select$name
   } else {
-    is_in_sdq <- temp_env$admiral_sdg_db$sdg_id == sdg_select$id
+    is_in_sdq <- temp_env$admiral_sdg_db$sdg_id == basket_select$id
   }
   if (keep_id) {
     select_id <- c(QUERY_ID = "sdg_id")
