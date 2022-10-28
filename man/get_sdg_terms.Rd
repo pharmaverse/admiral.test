@@ -2,13 +2,13 @@
 % Please edit documentation in R/get_terms.R
 \name{get_sdg_terms}
 \alias{get_sdg_terms}
-\title{An example function as expected by the `get_smq_fun` parameter of
+\title{An example function as expected by the `get_terms_fun` parameter of
 `admiral::create_query_data()`}
 \usage{
-get_sdg_terms(sdg_select, version, keep_id, temp_env)
+get_sdg_terms(basket_select, version, keep_id, temp_env)
 }
 \arguments{
-\item{sdg_select}{An sdg_select object defining the terms}
+\item{basket_select}{An basket_select object defining the terms}
 
 \item{version}{SDG version}
 
@@ -17,6 +17,6 @@ get_sdg_terms(sdg_select, version, keep_id, temp_env)
 \item{temp_env}{Temporary environment}
 }
 \description{
-An example function as expected by the `get_smq_fun` parameter of
+An example function as expected by the `get_terms_fun` parameter of
 `admiral::create_query_data()`
 }
