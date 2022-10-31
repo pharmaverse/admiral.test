@@ -1,7 +1,7 @@
 #' An example function as expected by the `get_terms_fun` parameter of
 #' `admiral::create_query_data()`
 #'
-#' @param basket_select An basket_select object defining the terms
+#' @param basket_select A basket_select object defining the terms
 #'
 #' @param version MedDRA version
 #'
@@ -41,7 +41,7 @@ get_smq_terms <- function(basket_select,
 #' An example function as expected by the `get_terms_fun` parameter of
 #' `admiral::create_query_data()`
 #'
-#' @param basket_select An basket_select object defining the terms
+#' @param basket_select A basket_select object defining the terms
 #'
 #' @param version SDG version
 #'
