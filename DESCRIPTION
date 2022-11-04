@@ -37,4 +37,4 @@ Suggests:
     styler,
     usethis,
     covr
-VignetteBuilder: knitr
+    
