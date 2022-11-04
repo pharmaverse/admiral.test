@@ -6,3 +6,6 @@
 ^.github$
 ^dev$
 ^.lintr$
+^admiral.test\.Rcheck$
+^admiral.test.*\.tar\.gz$
+^admiral.test.*\.tgz$
