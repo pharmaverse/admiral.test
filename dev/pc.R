@@ -126,7 +126,7 @@ pc <- PC %>%
   ungroup() %>%
   arrange(STUDYID, USUBJID, PCSEQ)
 
-#add labels
+# add labels
 pc <- pc %>%
   set_variable_labels(
     STUDYID = "Study Identifier",
@@ -142,7 +142,7 @@ pc <- pc %>%
     PCSTRESU = "Standard Units",
     PCNAM = "Vendor Name",
     PCSPEC = "Specimen Material Type",
-    PCLLOQ ="Lower Limit of Quantitation",
+    PCLLOQ = "Lower Limit of Quantitation",
     VISIT = "Visit Name",
     VISITNUM = "Visit Number",
     PCDTC = "Date/Time of Specimen Collection",
