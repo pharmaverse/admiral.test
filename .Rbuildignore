@@ -9,3 +9,4 @@
 ^admiral.test\.Rcheck$
 ^admiral.test.*\.tar\.gz$
 ^admiral.test.*\.tgz$
+^staged_dependencies.yaml$
