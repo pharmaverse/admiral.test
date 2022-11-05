@@ -1,6 +1,6 @@
 ---
 current_repo:
-  repo: pharmaverse/admiralci
+  repo: pharmaverse/admiral.test
   host: https://github.com
-upstream_repos: {}
-downstream_repos: {}
+upstream_repos:
+downstream_repos:
