@@ -50,7 +50,8 @@ admiral_mh <- mh %>%
   )) %>%
   # Add MHSTAT
   mutate(MHSTAT = ifelse(MHPRESP == "Y" & is.na(MHOCCUR), "NOT DONE",
-                         NA_character_)) %>%
+    NA_character_
+  )) %>%
   # Remove variables from DM
   select(-c("RFSTDTC", "RFENDTC", "RFXSTDTC", "RFXENDTC")) %>%
   # Variable labels

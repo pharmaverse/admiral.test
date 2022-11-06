@@ -26,7 +26,7 @@ Then there are two main ways to extend the test data, either by adding new datas
 ## Adding New SDTM Datasets
 
 - Add the output dataset name in `R/data.R` in the form `admiral_<name>`.
-- Create a program at `inst/data_scripts` named `<name>.R` (e.g. `rs.R`) to generate the test data and output as `admiral_<name>`. Use CDISC pilot data such as `admiral_dm` as input in this program in order to create realistic synthetic data that remains consistent with other domains. Note that **no personal data should be used** as part of this package, even if anonymised.
+- Create a program at `inst/data_scripts` named `<name>.R` (e.g. `rs.R`) to generate the test data and output as `admiral_<name>`. Use CDISC pilot data such as `admiral_dm` as input in this program in order to create realistic synthetic data that remains consistent with other domains. Note that **no personal data should be used** as part of this package, even if anonymized.
 - Add the output dataset to `data` folder
 - Run `devtools::document()` and include the updated `NAMESPACE` and `.Rd` files in `man/`
 
