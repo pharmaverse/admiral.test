@@ -6,3 +6,6 @@
 
 # macOS
 .DS_Store
+admiral.test.Rcheck/
+admiral.test*.tar.gz
+admiral.test*.tgz

@@ -44,7 +44,7 @@ pc2$AUC <- 0
 nrows <- dim(pc2)[1]
 for (idx in 1:nrows) {
   if (idx != 1 && pc2$USUBJID[idx] == pc2$USUBJID[idx - 1]) {
-    pc2$AUC [idx] <- (pc2$PCTPTNUM[idx] - pc2$PCTPTNUM[idx - 1]) * (pc2$PCSTRESN[idx] + pc2$PCSTRESN[idx - 1]) / 2 + pc2$AUC [idx - 1]
+    pc2$AUC[idx] <- (pc2$PCTPTNUM[idx] - pc2$PCTPTNUM[idx - 1]) * (pc2$PCSTRESN[idx] + pc2$PCSTRESN[idx - 1]) / 2 + pc2$AUC[idx - 1]
   }
 }
 
@@ -177,7 +177,7 @@ pp <- subset(pp, select = c(
   "PPORRES", "PPORRESU", "PPSTRESC", "PPSTRESN", "PPSTRESU", "PPSPEC", "PPRFDTC"
 ))
 
-#add labels
+# add labels
 pp <- pp %>%
   set_variable_labels(
     STUDYID = "Study Identifier",

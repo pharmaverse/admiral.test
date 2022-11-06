@@ -5,7 +5,7 @@
 \alias{admiral_pp}
 \title{Pharmacokinetic Parameters Dataset}
 \format{
-An object of class \code{data.frame} with 1344 rows and 14 columns.
+An object of class \code{data.frame} with 2346 rows and 14 columns.
 }
 \source{
 \url{https://github.com/pharmaverse/admiral.test/blob/main/data/admiral_pp.rda}
