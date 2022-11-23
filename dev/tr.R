@@ -1,26 +1,26 @@
 # TR
 
 library(dplyr)
-library(labelled)
 library(tidyselect)
 library(admiral)
+library(metatools)
 library(admiral.test)
 
 set.seed(1)
 
 # Reading input data
-data("dm")
-data("suppdm")
-data("sv")
+data("admiral_dm")
+data("admiral_suppdm")
+data("admiral_sv")
 
 # Converting blank to NA
-dm <- convert_blanks_to_na(dm)
-suppdm <- convert_blanks_to_na(suppdm)
-sv <- convert_blanks_to_na(sv)
+dm <- convert_blanks_to_na(admiral_dm)
+suppdm <- convert_blanks_to_na(admiral_suppdm)
+sv <- convert_blanks_to_na(admiral_sv)
 
 # Creating data frame with visits
 dm1 <- dm %>%
-  derive_vars_suppqual(suppdm)
+  combine_supp(suppdm)
 
 dm2 <- select(dm1, c(STUDYID, USUBJID, SAFETY, EFFICACY))
 
@@ -308,7 +308,7 @@ supptr <- select(
   )
 )
 
-supptr <- supptr %>% set_variable_labels(
+supptr <- supptr %>% add_labels(
   STUDYID = "Study Identifier",
   RDOMAIN = "Related Domain Abbreviation",
   USUBJID = "Unique Subject Identifier",
@@ -330,7 +330,7 @@ tr <- select(tr7, c(
   TREVAL, TREVALID, TRACPTFL, VISITNUM, VISIT, TRDTC, TRDY
 ))
 
-tr <- tr %>% set_variable_labels(
+tr <- tr %>% add_labels(
   STUDYID = "Study Identifier",
   DOMAIN = "Domain Abbreviation",
   USUBJID = "Unique Subject Identifier",
