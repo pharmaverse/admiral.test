@@ -1,5 +1,6 @@
-# admiral.test 0.3.0
- - Updated labels for pp and pc datasets (#77)
+# admiral.test 0.4.0
+
+ - Updated labels for PP and PC datasets (#77)
  - Implemented admiral CI/CD workflows
 
 # admiral.test 0.2.0
