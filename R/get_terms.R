@@ -31,9 +31,12 @@ get_terms <- function(basket_select,
     } else {
       select_id <- NULL
     }
-    keep_cols <- c(TERM_NAME = "termname",
-                   TERM_LEVEL = "termvar",
-                   QUERY_NAME = "smq_name", select_id)
+    keep_cols <- c(
+      TERM_NAME = "termname",
+      TERM_LEVEL = "termvar",
+      QUERY_NAME = "smq_name",
+      select_id
+    )
 
     structure(
       temp_env$admiral_smq_db[is_in_smq & is_in_scope, keep_cols],
@@ -53,9 +56,12 @@ get_terms <- function(basket_select,
     } else {
       select_id <- NULL
     }
-    keep_cols <- c(TERM_NAME = "termname",
-                   TERM_LEVEL = "termvar",
-                   QUERY_NAME = "sdg_name", select_id)
+    keep_cols <- c(
+      TERM_NAME = "termname",
+      TERM_LEVEL = "termvar",
+      QUERY_NAME = "sdg_name",
+      select_id
+    )
 
     structure(
       temp_env$admiral_sdg_db[is_in_sdq, keep_cols],
