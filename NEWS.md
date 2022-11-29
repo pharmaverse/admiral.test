@@ -1,3 +1,9 @@
+# admiral.test 0.4.0
+
+- `get_smq_select()` and `get_sdq_select()` have been deprecated in favor of `get_terms()` to accommodate changes in {admiral} (#94)
+ - Updated labels for PP and PC datasets (#77)
+ - Implemented admiral CI/CD workflows
+
 # admiral.test 0.2.0
 
 - Renaming all datasets to `admiral_` (#30) 
