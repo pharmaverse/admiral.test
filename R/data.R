@@ -1,9 +1,16 @@
-#' Adverse Events Dataset
+#' Adverse Events Dataset-updated
+#'
+#' An updated SDTM AE dataset that uses the CDISC pilot project
+#'
+#' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/ae.xpt?raw=true} # nolint
+"admiral_ae"
+
+#' Adverse Events Dataset-raw
 #'
 #' A SDTM AE dataset from the CDISC pilot project
 #'
 #' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/ae.xpt?raw=true} # nolint
-"admiral_ae"
+"raw_ae"
 
 #' Concomitant Medication Dataset
 #'
