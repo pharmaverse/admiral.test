@@ -18,8 +18,8 @@ lat <- c("LEFT", "RIGHT", "BOTH")
 # Set seed so that result stays the same for each run
 set.seed(1)
 ae$AELAT <- if_else(ae$AESOC == "EYE DISORDERS",
-                    apply(ae, 1, function(x) sample(lat, 1)),
-                    NA_character_
+  apply(ae, 1, function(x) sample(lat, 1)),
+  NA_character_
 )
 admiral_ae <- ae
 
