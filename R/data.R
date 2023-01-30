@@ -9,8 +9,8 @@
 #'
 #' A SDTM AE dataset from the CDISC pilot project
 #'
-#' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/ae.xpt?raw=true} # nolint
-"raw_ae"
+#' @source \url{https://github.com/pharmaverse/admiral.test/blob/main/data/admiral_ae.rda}
+#' "raw_ae"
 
 #' Concomitant Medication Dataset
 #'

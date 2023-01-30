@@ -3,17 +3,23 @@
 \docType{data}
 \name{admiral_cm}
 \alias{admiral_cm}
-\title{Concomitant Medication Dataset}
+\title{Adverse Events Dataset-raw}
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 7510 rows and 21 columns.
 }
 \source{
+\url{https://github.com/pharmaverse/admiral.test/blob/main/data/admiral_ae.rda}
+"raw_ae"
+Concomitant Medication Dataset
+
+A SDTM CM dataset from the CDISC pilot project
+
 \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/cm.xpt?raw=true} # nolint
 }
 \usage{
 admiral_cm
 }
 \description{
-A SDTM CM dataset from the CDISC pilot project
+A SDTM AE dataset from the CDISC pilot project
 }
 \keyword{datasets}
