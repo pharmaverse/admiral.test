@@ -1,5 +1,5 @@
 # admiral.test 0.5.0
- - Updated ae to add variable aelat for ophthamology package (#99)
+ - Updated AE to add variable AELAT for ophthalmology package (#99)
 
 # admiral.test 0.3.0
  - Updated labels for pp and pc datasets (#77)
