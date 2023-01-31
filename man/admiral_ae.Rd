@@ -5,10 +5,10 @@
 \alias{admiral_ae}
 \title{Adverse Events Dataset-updated}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 1191 rows and 35 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 1191 rows and 36 columns.
 }
 \source{
-\url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/ae.xpt?raw=true} # nolint
+\url{https://github.com/pharmaverse/admiral.test/blob/main/data/admiral_ae.rda}
 }
 \usage{
 admiral_ae

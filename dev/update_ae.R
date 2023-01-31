@@ -23,4 +23,4 @@ admiral_ae <- ae
 attr(admiral_ae, "label") <- "Adverse Events"
 
 # Save dataset ----
-save(admiral_ae, "data/admiral_ae.rda", compress = "bzip2")
+save(admiral_ae, file = "data/admiral_ae.rda", compress = "bzip2")

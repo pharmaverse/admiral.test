@@ -5,6 +5,8 @@ Version: 0.5.0
 Authors@R: c(
   person("Thomas", "Neitmann", email = "thomas.neitmann@roche.com", role = c("aut", "cre")),
   person("Stefan", "Bundfuss", role = "aut"),
+  person("Gordon", "Miller", role = "aut"),
+  person("Ben", "Straub", role = "aut"),
   person("Ross", "Farrugia", role = "ctb"),
   person("Gopi", "Vegesna", role = "ctb"),
   person("Sophie", "Shapcott", role = "ctb"),
