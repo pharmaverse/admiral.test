@@ -14,6 +14,8 @@ A set of Study Data Tabulation Model (SDTM) datasets from the Clinical Data Inte
 Authors:
 \itemize{
   \item Stefan Bundfuss
+  \item Gordon Miller
+  \item Ben Straub
 }
 
 Other contributors:
