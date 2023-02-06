@@ -77,6 +77,13 @@
 #' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/mh.xpt?raw=true} # nolint
 "raw_mh"
 
+#' Ophthalmic Examinations Dataset
+#'
+#' A SDTM OE dataset simulated by Ophthalmology team
+#'
+#' @author Gordon Miller
+"admiral_oe"
+
 #' Pharmacokinetics Concentrations Dataset
 #'
 #' A SDTM PC dataset simulated by Antonio Rodríguez Contestí
