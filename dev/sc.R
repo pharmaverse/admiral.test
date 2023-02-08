@@ -17,8 +17,8 @@ dm1 <- dm %>%
 
 # use subjects in DM  and info from SV  Screening 1 visit
 sc <- merge(dm1[, c("STUDYID", "USUBJID", "SUBJID", "RFSTDTC")],
-            sv[sv$VISIT == "SCREENING 1", c("STUDYID", "USUBJID", "SVSTDTC", "VISIT")],
-            by = c("STUDYID", "USUBJID")
+  sv[sv$VISIT == "SCREENING 1", c("STUDYID", "USUBJID", "SVSTDTC", "VISIT")],
+  by = c("STUDYID", "USUBJID")
 )
 
 # Create SC domain var
@@ -38,8 +38,10 @@ sc$SCSTRESC <- if_else(as.integer(sc$SUBJID) %% 2 == 0, "OS", "OD")
 sc_seq <- sc %>%
   group_by(STUDYID, USUBJID) %>%
   dplyr::mutate(SCSEQ = row_number()) %>%
-  select("STUDYID", "DOMAIN", "USUBJID", "SCSEQ", "SCTESTCD", "SCTEST",
-         "SCCAT", "SCORRES", "SCSTRESC", "EPOCH", "SCDTC", "SCDY")
+  select(
+    "STUDYID", "DOMAIN", "USUBJID", "SCSEQ", "SCTESTCD", "SCTEST",
+    "SCCAT", "SCORRES", "SCSTRESC", "EPOCH", "SCDTC", "SCDY"
+  )
 
 sc <- sc_seq %>%
   ungroup() %>%
