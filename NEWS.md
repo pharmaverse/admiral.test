@@ -1,5 +1,10 @@
 # admiral.test 0.5.0
  - Updated AE to add variable AELAT for ophthalmology package (#99)
+ - Updated TR, TU, RS for admiralonco package (#103):
+     - tumor location `"LYMPH NODE"` added
+     - TR test codes `"LDIAM"` and `"LPERP"` added
+     - unscheduled visits added
+     - incomplete assessments of target lesions added
 
 # admiral.test 0.3.0
  - Updated labels for pp and pc datasets (#77)
