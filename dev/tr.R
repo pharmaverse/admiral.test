@@ -26,7 +26,7 @@ dm1 <- dm %>%
 dm2 <- select(dm1, c(STUDYID, USUBJID, SAFETY, EFFICACY))
 
 tr1 <- select(sv, c(STUDYID, USUBJID, VISIT, VISITNUM, VISITDY, SVSTDTC)) %>%
-  filter(VISITNUM %in% c(3, 7, 9, 10.1, 12)) %>%
+  filter(VISITNUM %in% c(3, 7, 9, 9.2, 9.3, 10.1, 12)) %>%
   rename(TRDTC = SVSTDTC, TRDY = VISITDY)
 
 tr2 <- merge(dm2, tr1, by = c("STUDYID", "USUBJID"))
@@ -105,11 +105,12 @@ tr3 <- tr3 %>% mutate(
   "TRSTRESN" = case_when(
     floor(SUBJNO %% 5) == 0 & VISITNUM %in% c(9, 10.1) ~ 0,
     floor(SUBJNO %% 9) == 0 & TREVAL == "INVESTIGATOR" &
-      VISITNUM == 10.1 ~ NA_real_,
+      VISITNUM == 7 & TRLNKID == paste0("T0", SUBJNO %% 5 + 1) ~ NA_real_,
     floor(SUBJNO %% 8) == 0 &
       (TREVALID == "RADIOLOGIST 1" | TREVALID == "RADIOLOGIST 2") &
       VISITNUM == 10.1 ~ NA_real_,
-    VISITNUM == 3 ~ TRSTRESN + 5,
+    floor(SUBJNO %% 2) != 0 & VISITNUM == 3 ~ TRSTRESN + 5,
+    floor(SUBJNO %% 2) == 0 & VISITNUM != 3 ~ TRSTRESN + 5,
     TRUE ~ TRSTRESN
   ),
   "TRORRES" = as.character(TRSTRESN),
@@ -153,7 +154,7 @@ tr3sum <- tr3 %>%
     TREVALID, TRDTC, TRDY, TRGRPID, TRORRESU,
     TRSTRESU, SAFETY, EFFICACY
   ) %>%
-  summarize(TRSTRESN = sum(TRSTRESN)) %>%
+  summarize(TRSTRESN = sum(TRSTRESN, na.rm = TRUE)) %>%
   mutate(
     "TRTESTCD" = "SUMDIAM",
     "TRTEST" = "Sum of Diameter",
@@ -312,7 +313,8 @@ tr <- tr %>%
       TRUE ~ TRLNKG
     ),
     "TRACPTFL" = case_when(TREVALID == "RADIOLOGIST 1" ~ "Y")
-  )
+  ) %>%
+  ungroup()
 
 # Creating SUPPTR ----
 supptr1 <- select(tr, c("STUDYID", "USUBJID", "TRSEQ", "DOMAIN", "TRLOC"))
