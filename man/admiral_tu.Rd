@@ -5,7 +5,7 @@
 \alias{admiral_tu}
 \title{Tumor Identification Dataset}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 7734 rows and 18 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 15354 rows and 18 columns.
 }
 \usage{
 admiral_tu
