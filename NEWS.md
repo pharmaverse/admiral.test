@@ -1,5 +1,6 @@
 # admiral.test 0.5.0
  - Updated AE to add variable AELAT for ophthalmology package (#99)
+ - Added SDTM SC dataset for ophthalmology package (#102)
 
 # admiral.test 0.3.0
  - Updated labels for pp and pc datasets (#77)
