@@ -10,16 +10,19 @@ lb_diff_abs <- lb %>%
   filter(LBTESTCD %in% c("BASO", "EOS", "LYM", "MONO", "NEUT"))
 
 # Subset on a few patients and visits
-subject_sub <- lb_diff_abs %>% distinct(USUBJID) %>% head()
+subject_sub <- lb_diff_abs %>%
+  distinct(USUBJID) %>%
+  head()
 
 lb_sub <- lb_diff_abs %>%
-  filter(USUBJID %in% subject_sub$USUBJID,
-         VISIT %in% c("SCREENING 1", "WEEK 2")
-         )
+  filter(
+    USUBJID %in% subject_sub$USUBJID,
+    VISIT %in% c("SCREENING 1", "WEEK 2")
+  )
 
 # Create dummy differential lab tests
 set.seed(1)
-rand_diff <- sample(seq(0, 0.5, by = 0.05),replace=T, nrow(lb_sub))
+rand_diff <- sample(seq(0, 0.5, by = 0.05), replace = T, nrow(lb_sub))
 
 lb_diff <- lb_sub %>%
   mutate(
@@ -29,7 +32,7 @@ lb_diff <- lb_sub %>%
       LBTESTCD == "LYM" ~ "LYMLE",
       LBTESTCD == "MONO" ~ "MONOLE",
       LBTESTCD == "NEUT" ~ "NEUTLE"
-      ),
+    ),
     LBTEST = case_when(
       LBTESTCD == "BASOLE" ~ "Basophils/Leukocytes",
       LBTESTCD == "EOSLE" ~ "Eosinophils/Leukocytes",

@@ -3,6 +3,9 @@ library(plyr)
 library(dplyr) # apply distincts
 library(lubridate)
 library(ggplot2)
+library(labelled)
+library(admiral)
+library(admiral.test)
 
 data("admiral_ex")
 data("admiral_dm")
@@ -17,7 +20,7 @@ dm1 <- dm %>%
 dmex <- merge(dm1[, c(1, 3)], ex, by = c("STUDYID", "USUBJID"))
 
 # I'm going to calculate only PC on Baseline,
-# so going to filter onlyvisit = BASELINE
+# so going to filter only visit = BASELINE
 dmex1 <- dmex %>%
   filter(VISIT == "BASELINE")
 
@@ -123,11 +126,37 @@ pc <- PC %>%
   ungroup() %>%
   arrange(STUDYID, USUBJID, PCSEQ)
 
+# add labels
+pc <- pc %>%
+  set_variable_labels(
+    STUDYID = "Study Identifier",
+    DOMAIN = "Domain Abbreviation",
+    USUBJID = "Unique Subject Identifier",
+    PCSEQ = "Sequence Number",
+    PCTESTCD = "Pharmacokinetic Test Short Name",
+    PCTEST = "Pharmacokinetic Test Name",
+    PCORRES = "Result or Finding in Original Units",
+    PCORRESU = "Original Units",
+    PCSTRESC = "Character Result/Finding in Std Format",
+    PCSTRESN = "Numeric Result/Finding in Standard Units",
+    PCSTRESU = "Standard Units",
+    PCNAM = "Vendor Name",
+    PCSPEC = "Specimen Material Type",
+    PCLLOQ = "Lower Limit of Quantitation",
+    VISIT = "Visit Name",
+    VISITNUM = "Visit Number",
+    PCDTC = "Date/Time of Specimen Collection",
+    PCDY = "Actual Study Day of Specimen Collection",
+    PCTPT = "Planned Time Point Name",
+    PCTPTNUM = "Planned Time Point Number"
+  )
+
 
 # Some test to look the overall figure
 plot <- ggplot(pc, aes(x = PCTPTNUM, y = PCSTRESN, group = USUBJID)) +
   geom_line() +
   geom_point()
+
 
 # ---- Save output ----
 admiral_pc <- pc
