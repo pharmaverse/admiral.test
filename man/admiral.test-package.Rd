@@ -16,6 +16,7 @@ Authors:
   \item Stefan Bundfuss
   \item Gordon Miller
   \item Ben Straub
+  \item Syed Mubasheer
 }
 
 Other contributors:
