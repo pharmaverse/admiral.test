@@ -1,8 +1,8 @@
 # SC (ophthalmology)
 
-library(admiral)
-library(admiral.test) # Contains example datasets from the CDISC pilot project
 library(dplyr)
+library(metatools)
+library(admiral.test)
 
 data("admiral_dm")
 data("admiral_sv")
@@ -15,7 +15,7 @@ dm1 <- dm %>%
   filter(ARMCD != "Scrnfail")
 
 
-# use subjects in DM  and info from SV  Screening 1 visit
+# Use subjects in DM  and info from SV  Screening 1 visit
 sc <- merge(dm1[, c("STUDYID", "USUBJID", "SUBJID", "RFSTDTC")],
   sv[sv$VISIT == "SCREENING 1", c("STUDYID", "USUBJID", "SVSTDTC", "VISIT")],
   by = c("STUDYID", "USUBJID")
@@ -37,7 +37,7 @@ sc$SCSTRESC <- if_else(as.integer(sc$SUBJID) %% 2 == 0, "OS", "OD")
 # SCSEQ and keep relevant variables;
 sc_seq <- sc %>%
   group_by(STUDYID, USUBJID) %>%
-  dplyr::mutate(SCSEQ = row_number()) %>%
+  mutate(SCSEQ = row_number()) %>%
   select(
     "STUDYID", "DOMAIN", "USUBJID", "SCSEQ", "SCTESTCD", "SCTEST",
     "SCCAT", "SCORRES", "SCSTRESC", "EPOCH", "SCDTC", "SCDY"
@@ -45,22 +45,23 @@ sc_seq <- sc %>%
 
 sc <- sc_seq %>%
   ungroup() %>%
-  # sort data
-  arrange(STUDYID, USUBJID, SCSEQ)
-
-# assign variable labels
-attr(sc$STUDYID, "label") <- "Study Identifier"
-attr(sc$DOMAIN, "label") <- "Domain Abbreviation"
-attr(sc$USUBJID, "label") <- "Unique Subject Identifier"
-attr(sc$SCSEQ, "label") <- "Sequence Number"
-attr(sc$SCTESTCD, "label") <- "Subject Characteristic Short Name"
-attr(sc$SCTEST, "label") <- "Subject Characteristic"
-attr(sc$SCCAT, "label") <- "Category for Subject Characteristic"
-attr(sc$SCORRES, "label") <- "Result or Finding in Original Units"
-attr(sc$SCSTRESC, "label") <- "Character Result/Finding in Std Format"
-attr(sc$EPOCH, "label") <- "Epoch"
-attr(sc$SCDTC, "label") <- "Date/Time of Collection"
-attr(sc$SCDY, "label") <- "Study Day of Examination"
+  # Sort data
+  arrange(STUDYID, USUBJID, SCSEQ) %>%
+  # Assign variable labels
+  add_labels(
+    STUDYID = "Study Identifier",
+    DOMAIN = "Domain Abbreviation",
+    USUBJID = "Unique Subject Identifier",
+    SCSEQ = "Sequence Number",
+    SCTESTCD = "Subject Characteristic Short Name",
+    SCTEST = "Subject Characteristic",
+    SCCAT = "Category for Subject Characteristic",
+    SCORRES = "Result or Finding in Original Units",
+    SCSTRESC = "Character Result/Finding in Std Format",
+    EPOCH = "Epoch",
+    SCDTC = "Date/Time of Collection",
+    SCDY = "Study Day of Examination"
+  )
 
 admiral_sc <- sc
 
