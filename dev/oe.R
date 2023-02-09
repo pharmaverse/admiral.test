@@ -1,7 +1,7 @@
 # OE
 
 library(dplyr)
-library(labelled)
+library(metatools)
 library(tidyselect)
 library(admiral)
 library(admiral.test)
@@ -115,7 +115,7 @@ oe <- oe4 %>%
     OESTRESN, OESTRESC, OEORRES, OETEST, OETESTCD, OETSTDTL, OELAT, OELOC, OEDY,
     OEMETHOD, OEORRESU, OESTRESU, OESTAT, OETPT, OETPTNUM
   ) %>%
-  labelled::set_variable_labels(
+  add_labels(
     STUDYID = "Study Identifier",
     DOMAIN = "Domain Abbreviation",
     USUBJID = "Unique Subject Identifier",
