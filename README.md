@@ -25,14 +25,15 @@ Then there are two main ways to extend the test data, either by adding new datas
 
 ## Adding New SDTM Datasets
 
-- Add the output dataset name in `R/data.R` in the form `admiral_<name>`.
-- Create a program at `inst/data_scripts` named `<name>.R` (e.g. `rs.R`) to generate the test data and output as `admiral_<name>`. Use CDISC pilot data such as `admiral_dm` as input in this program in order to create realistic synthetic data that remains consistent with other domains. Note that **no personal data should be used** as part of this package, even if anonymized.
-- Add the output dataset to `data` folder
-- Run `devtools::document()` and include the updated `NAMESPACE` and `.Rd` files in `man/`
+- Create a program in the `dev/` folder, named `<name>.R` (e.g. `rs.R`), to generate the test data and output `admiral_<name>` to the `data/` folder. Use CDISC pilot data such as `admiral_dm` as input in this program in order to create realistic synthetic data that remains consistent with other domains. Note that **no personal data should be used** as part of this package, even if anonymized.
+- Run the program.
+- Reflect this update, by specifying `admiral_<name>` in `R/data.R`.
+- Run `devtools::document()` in order to update `NAMESPACE` and update the `.Rd` files in `man/`.
 
 ## Updating Existing SDTM Datasets
 
-- Rename the source dataset as `raw_<name>` (e.g. `raw_ds`) and reflect this change in `R/data.R` by including both `raw_<name>` and `admiral_<name>` here.
-- Create a program at `inst/data_scripts` named `update_<name>.R` to read in `raw_<name>`, make the updates, and output as `admiral_<name>`.
-- Add the output dataset to `data` folder
-- Run `devtools::document()` and include the updated `NAMESPACE` and `.Rd` files in `man/`
+- Rename the source dataset as `raw_<name>` (e.g. `raw_ds`) and copy it to the `data/` folder.
+- Create a program in the `dev/` folder, named `update_<name>.R`, to read in `raw_<name>`, make the updates, and output `admiral_<name>` to the `data/` folder.
+- Run the program.
+- Reflect this update, by specifying both `raw_<name>` and `admiral_<name>` in `R/data.R`.
+- Run `devtools::document()` in order to update `NAMESPACE` and update the `.Rd` files in `man/`.
