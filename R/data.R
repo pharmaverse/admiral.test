@@ -114,6 +114,13 @@
 #' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/qs.xpt?raw=true} # nolint
 "admiral_qs"
 
+#' Subject Characteristic Dataset
+#'
+#' A SDTM SC dataset simulated by Ophthalmology team
+#'
+#' @author Gordon Miller
+"admiral_sc"
+
 #' Tumor Identification Dataset
 #'
 #' A SDTM TU dataset simulated by Gopi Vegesna
