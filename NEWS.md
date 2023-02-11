@@ -1,5 +1,6 @@
 # admiral.test 0.5.0
  - Updated AE to add variable AELAT for ophthalmology package (#99)
+ - Using {metatools} to add labels to datasets (#87)
  - Created OE SDTM for ophthalmology package (#101)
 
 # admiral.test 0.3.0
