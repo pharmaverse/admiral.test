@@ -1,9 +1,9 @@
 # RS
 
 library(dplyr)
-library(labelled)
 library(tidyselect)
 library(admiral)
+library(metatools)
 library(admiral.test)
 
 # Reading input data
@@ -188,7 +188,7 @@ rs <- select(rs6, c(
   VISITNUM, VISIT, RSDTC, RSDY
 ))
 
-rs <- rs %>% set_variable_labels(
+rs <- rs %>% add_labels(
   STUDYID = "Study Identifier",
   DOMAIN = "Domain Abbreviation",
   USUBJID = "Unique Subject Identifier",

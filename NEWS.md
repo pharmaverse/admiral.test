@@ -2,6 +2,7 @@
  - Updated AE to add variable AELAT for ophthalmology package (#99)
  - Created SDTM SC dataset for ophthalmology package (#102)
  - Created SDTM OE dataset for ophthalmology package (#101)
+ - Using {metatools} to add labels to datasets (#87)
 
 # admiral.test 0.3.0
  - Updated labels for pp and pc datasets (#77)
