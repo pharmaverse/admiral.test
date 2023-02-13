@@ -3,8 +3,8 @@
 library(dplyr)
 library(tidyselect)
 library(metatools)
-library(labelled)
 library(admiral)
+library(metatools)
 library(admiral.test)
 
 set.seed(1)
@@ -337,7 +337,7 @@ supptr <- select(
   )
 )
 
-supptr <- supptr %>% set_variable_labels(
+supptr <- supptr %>% add_labels(
   STUDYID = "Study Identifier",
   RDOMAIN = "Related Domain Abbreviation",
   USUBJID = "Unique Subject Identifier",
@@ -359,7 +359,7 @@ tr <- select(tr, c(
   TREVAL, TREVALID, TRACPTFL, VISITNUM, VISIT, TRDTC, TRDY
 ))
 
-tr <- tr %>% set_variable_labels(
+tr <- tr %>% add_labels(
   STUDYID = "Study Identifier",
   DOMAIN = "Domain Abbreviation",
   USUBJID = "Unique Subject Identifier",

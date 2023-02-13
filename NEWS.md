@@ -5,6 +5,9 @@
      - TR test codes `"LDIAM"` and `"LPERP"` added
      - unscheduled visits added
      - incomplete assessments of target lesions added
+ - Created SDTM SC dataset for ophthalmology package (#102)
+ - Created SDTM OE dataset for ophthalmology package (#101)
+ - Using {metatools} to add labels to datasets (#87)
 
 # admiral.test 0.3.0
  - Updated labels for pp and pc datasets (#77)
