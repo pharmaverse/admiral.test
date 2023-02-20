@@ -59,7 +59,13 @@ tr3a <- bind_rows(
   (tr2 %>% mutate("tar1" = tar + 3, "TRLNKID" = "T04")),
   (tr2 %>% mutate("tar1" = tar + 4, "TRLNKID" = "T05"))
 ) %>%
-  mutate("TREVAL" = "INVESTIGATOR")
+  mutate("TREVAL" = "INVESTIGATOR") %>%
+  # add incomplete date
+  mutate(TRDTC = if_else(
+    USUBJID == "01-701-1015" & VISIT == "BASELINE",
+    substr(TRDTC, 1, 7),
+    TRDTC
+  ))
 
 tar <- floor(runif(n = nrows, min = 1, max = 5))
 tr3b <- bind_rows(
