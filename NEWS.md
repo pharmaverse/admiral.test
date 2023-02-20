@@ -3,7 +3,7 @@
  - Created SDTM SC dataset for ophthalmology package (#102)
  - Created SDTM OE dataset for ophthalmology package (#101)
  - Using {metatools} to add labels to datasets (#87)
- - `admiral.test` has sdtm data for [oncology](https://pharmaverse.github.io/admiralonco/main/index.html)
+ - `admiral.test` has SDTM data for [oncology](https://pharmaverse.github.io/admiralonco/main/index.html)
  and [opthalmology](https://pharmaverse.github.io/admiralophtha/main/reference/index.html)
  
 # admiral.test 0.4.0
