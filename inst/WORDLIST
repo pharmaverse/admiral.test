@@ -17,6 +17,7 @@ ophthalmology
 Pharmacokinetic
 Pharmacokinetics
 QS
+Rbuildignore
 README
 SDG
 SDTM
@@ -28,6 +29,7 @@ SUPPTR
 SV
 anonymized
 funder
+ggplot2
 repo
 sdg
 smq
