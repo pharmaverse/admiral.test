@@ -1,6 +1,8 @@
 # admiral.test
 
-Test data for the `{admiral}` package taken from the [CDISC pilot project](https://github.com/cdisc-org/sdtm-adam-pilot-project) and renamed with `admiral_` prefix for clarity. As this mostly contains safety data only, we extend this as needed by adding further test data required such as for PK and TA-specific efficacy analyses. See the "How To Update" section below for more details.
+Test data for the `{admiral}` package taken from the [CDISC pilot project](https://github.com/cdisc-org/sdtm-adam-pilot-project) and renamed with `admiral_` prefix for clarity.
+As this mostly contains safety data only, we extend this as needed by adding further test data required such as for PK and TA-specific efficacy analyses.
+See the "How To Update" section below for more details.
 
 # Installation
 
