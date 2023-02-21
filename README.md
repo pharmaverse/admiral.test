@@ -10,7 +10,7 @@ The package is available from CRAN and can be installed by running `install.pack
 
 To install the latest development version of the package directly from GitHub use the following code:
 
-``` r
+```r
 if (!requireNamespace("remotes", quietly = TRUE)) {
   install.packages("remotes")
 }
@@ -20,7 +20,8 @@ remotes::install_github("pharmaverse/admiral.test", ref = "devel")
 
 # How To Update
 
-Firstly, make a GitHub issue in this repo with the planned updates and tag `@pharmaverse/admiral` so that one of the development core team can sanity check the request. Then there are two main ways to extend the test data, either by adding new datasets or extending existing datasets with new records/variables. Whichever method you choose, it is worth noting the following:
+Firstly, make a GitHub issue in this repo with the planned updates and tag `@pharmaverse/admiral` so that one of the development core team can sanity check the request.
+Then there are two main ways to extend the test data, either by adding new datasets or extending existing datasets with new records/variables. Whichever method you choose, it is worth noting the following:
 
 -   Programs that generate test data are stored in the `dev/` folder.
 -   Each of these programs is written as a standalone R script: if any packages need to be loaded for a given program, then call `library()` at the start of the program.
