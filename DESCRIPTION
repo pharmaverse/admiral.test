@@ -7,6 +7,7 @@ Authors@R: c(
   person("Stefan", "Bundfuss", role = "aut"),
   person("Gordon", "Miller", role = "aut"),
   person("Ben", "Straub", role = "aut"),
+  person("Syed", "Mubasheer", role = "aut"),
   person("Ross", "Farrugia", role = "ctb"),
   person("Gopi", "Vegesna", role = "ctb"),
   person("Sophie", "Shapcott", role = "ctb"),
