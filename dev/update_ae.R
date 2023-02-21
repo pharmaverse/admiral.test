@@ -18,7 +18,7 @@ ae$AELAT <- if_else(ae$AESOC == "EYE DISORDERS",
   apply(ae, 1, function(x) sample(lat, 1)),
   NA_character_
 )
-admiral_ae <- ae%>%
+admiral_ae <- ae %>%
   add_labels(AELAT = "Laterality")
 
 attr(admiral_ae, "label") <- "Adverse Events"

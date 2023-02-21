@@ -5,7 +5,7 @@
 \alias{admiral_qs}
 \title{Questionnaire Dataset}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 121749 rows and 20 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 202907 rows and 20 columns.
 }
 \source{
 \url{https://github.com/pharmaverse/admiral.test/blob/main/data/admiral_qs.rda} # nolint

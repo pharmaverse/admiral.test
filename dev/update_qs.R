@@ -1,13 +1,11 @@
-#' Program Name : vfq.R
+#' Program Name : update_qs.R
 
-#' Description : create VFQ test data for ADMIRAL Ophtha
+#' Description : create VFQ questionnaire test data for ADMIRAL Ophtha
 
-#' Input : admiralophtha_qs
+#' Input : raw_qs
 
 #' Author : Ritika Aggarwal
 
-
-library(admiral)
 library(admiral.test) # contains test datasets from previous ADMIRAL project
 library(metatools)
 library(dplyr)
@@ -106,6 +104,6 @@ admiral_qs <- raw_qs %>%
     VISITDY = "Planned Study Day of Visit",
     QSDTC = "Date/Time of Finding",
     QSDY = "Study Day of Finding"
-  )s
+  )
 
 save(admiral_qs, file = "data/admiral_qs.rda", compress = "bzip2")
