@@ -112,6 +112,13 @@
 #' A SDTM QS dataset from the CDISC pilot project
 #'
 #' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/qs.xpt?raw=true} # nolint
+"raw_qs"
+
+#' Questionnaire Dataset
+#'
+#' A SDTM QS dataset from the CDISC pilot project & Ophthalmology test data
+#'
+#' @source \url{https://github.com/pharmaverse/admiral.test/blob/main/data/admiral_qs.rda} # nolint
 "admiral_qs"
 
 #' Subject Characteristic Dataset
