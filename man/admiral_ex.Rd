@@ -5,15 +5,15 @@
 \alias{admiral_ex}
 \title{Exposure Dataset}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 591 rows and 17 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 1182 rows and 19 columns.
 }
 \source{
-\url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/ex.xpt?raw=true} # nolint
+\url{https://github.com/pharmaverse/admiral.test/blob/main/data/admiral_ex.rda}
 }
 \usage{
 admiral_ex
 }
 \description{
-A SDTM EX dataset from the CDISC pilot project
+A SDTM EX dataset updates for Ophthalmology
 }
 \keyword{datasets}

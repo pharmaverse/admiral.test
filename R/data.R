@@ -52,6 +52,13 @@
 #' A SDTM EX dataset from the CDISC pilot project
 #'
 #' @source \url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/ex.xpt?raw=true} # nolint
+"raw_ex"
+
+#' Exposure Dataset
+#'
+#' A SDTM EX dataset updates for Ophthalmology
+#'
+#' @source \url{https://github.com/pharmaverse/admiral.test/blob/main/data/admiral_ex.rda}
 "admiral_ex"
 
 #' Laboratory Measurements Dataset
