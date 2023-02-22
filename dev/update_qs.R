@@ -55,8 +55,7 @@ dummy_param <- tibble(tribble(
   "Difficulty Recognizing People",         "NO DIFFICULTY",              1,
   "Difficulty Taking Part in Sports",      "SOME DIFFICULTY",            2,
   "Difficulty Seeing Programs on TV",      "NO DIFFICULTY",              1,
-  )
-)
+))
 
 # create dummy qs ====
 dummy_qs <- dummy_param %>%

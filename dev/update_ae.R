@@ -3,6 +3,7 @@
 library(dplyr)
 library(admiral.test)
 library(admiral)
+library(metatools)
 
 data("raw_ae")
 ae <- convert_blanks_to_na(raw_ae)
