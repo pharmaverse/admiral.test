@@ -6,7 +6,6 @@
 
 #' Author : Ritika Aggarwal
 
-library(admiral.test) # contains test datasets from previous ADMIRAL project
 library(metatools)
 library(dplyr)
 
