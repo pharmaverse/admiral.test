@@ -1,9 +1,9 @@
 # TU
 
 library(dplyr)
-library(labelled)
 library(tidyselect)
 library(admiral)
+library(metatools)
 library(admiral.test)
 
 # Reading input data  --  DUMMY DATA CREATED FROM TR data created from TR
@@ -57,7 +57,7 @@ tu <- select(tu2, c(
   VISITNUM, VISIT, TUDTC, TUDY
 ))
 
-tu <- tu %>% set_variable_labels(
+tu <- tu %>% add_labels(
   STUDYID = "Study Identifier",
   DOMAIN = "Domain Abbreviation",
   USUBJID = "Unique Subject Identifier",
