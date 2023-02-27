@@ -4,7 +4,6 @@ library(dplyr)
 library(tidyselect)
 library(admiral)
 library(metatools)
-library(admiral.test)
 
 # Reading input data  --  DUMMY DATA CREATED FROM TR data created from TR
 data("admiral_tr")

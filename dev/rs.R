@@ -4,7 +4,6 @@ library(dplyr)
 library(tidyselect)
 library(admiral)
 library(metatools)
-library(admiral.test)
 
 # Reading input data
 data("admiral_tr")

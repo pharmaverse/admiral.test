@@ -5,7 +5,6 @@ library(tidyselect)
 library(metatools)
 library(admiral)
 library(metatools)
-library(admiral.test)
 
 set.seed(1)
 
