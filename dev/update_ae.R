@@ -3,6 +3,7 @@
 library(dplyr)
 library(admiral.test)
 library(admiral)
+library(metatools)
 
 data("raw_ae")
 ae <- convert_blanks_to_na(raw_ae)
@@ -18,7 +19,8 @@ ae$AELAT <- if_else(ae$AESOC == "EYE DISORDERS",
   apply(ae, 1, function(x) sample(lat, 1)),
   NA_character_
 )
-admiral_ae <- ae
+admiral_ae <- ae %>%
+  add_labels(AELAT = "Laterality")
 
 attr(admiral_ae, "label") <- "Adverse Events"
 
