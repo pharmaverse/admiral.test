@@ -1,10 +1,4 @@
-#' Program Name : update_qs.R
-
 #' Description : create VFQ questionnaire test data for ADMIRAL Ophtha
-
-#' Input : raw_qs
-
-#' Author : Ritika Aggarwal
 
 library(metatools)
 library(dplyr)
