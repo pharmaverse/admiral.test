@@ -4,7 +4,6 @@ library(lubridate)
 library(ggplot2)
 library(labelled)
 library(admiral)
-library(admiral.test)
 
 data("pc")
 

@@ -1,7 +1,6 @@
 # Update AE by adding AELAT variable for admiraloptha package
 
 library(dplyr)
-library(admiral.test)
 library(admiral)
 library(metatools)
 

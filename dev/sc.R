@@ -2,7 +2,6 @@
 
 library(dplyr)
 library(metatools)
-library(admiral.test)
 
 data("admiral_dm")
 data("admiral_sv")
