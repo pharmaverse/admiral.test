@@ -5,6 +5,7 @@
      - TR test codes `"LDIAM"` and `"LPERP"` added
      - unscheduled visits added
      - incomplete assessments of target lesions added
+ - Updated QS to add questionnaire for ophthalmology package (#120)
  - Created SDTM SC dataset for ophthalmology package (#102)
  - Created SDTM OE dataset for ophthalmology package (#101)
  - Using {metatools} to add labels to datasets (#87)
