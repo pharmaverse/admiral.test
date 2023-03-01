@@ -6,6 +6,7 @@
  - Using {metatools} to add labels to datasets (#87)
  - `admiral.test` has SDTM data for [oncology](https://pharmaverse.github.io/admiralonco/main/index.html)
  and [ophthalmology](https://pharmaverse.github.io/admiralophtha/main/reference/index.html)
+ - Removed `library(admiral.test)` from all programs in the `./dev` directory.
  
 # admiral.test 0.4.0
  - Updated labels for pp and pc datasets (#77)
