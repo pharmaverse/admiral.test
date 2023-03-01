@@ -12,8 +12,6 @@ Hoffmann
 LLC
 MH
 MedDRA
-metatools
-ophthalmology
 Pharmacokinetic
 Pharmacokinetics
 QS
@@ -28,7 +26,7 @@ SUPPTR
 SV
 anonymized
 funder
-repo
-sdg
-smq
+metatools
+nolint
 pc
+repo
