@@ -48,14 +48,6 @@
 <li>
   <a href="news/index.html">Changelog</a>
 </li>
-<!-- start dropdown for versions --> <li class="nav-item dropdown">
-        <a href="#" class="nav-link dropdown-toggle"
-          data-bs-toggle="dropdown" role="button"
-          aria-expanded="false" aria-haspopup="true"
-          id="dropdown-versions">Versions</a> <div class="dropdown-menu" aria-labelledby="dropdown-versions"> <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/admiral.test/main">main</a>
-<a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/admiral.test/devel">devel</a>
-<a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/admiral.test/pre-release">pre-release</a> </div></li>
-<!-- end dropdown for versions -->
       </ul>
 <ul class="nav navbar-nav navbar-right"></ul>
 </div>
@@ -93,8 +85,8 @@
 <p>Firstly, make a GitHub issue in this repo with the planned updates and tag <code>@pharmaverse/admiral</code> so that one of the development core team can sanity check the request. Then there are two main ways to extend the test data, either by adding new datasets or extending existing datasets with new records/variables. Whichever method you choose, it is worth noting the following:</p>
 <ul>
 <li>Programs that generate test data are stored in the <code>dev/</code> folder.</li>
-<li>Each of these programs is written as a standalone R script: if any packages need to be loaded for a given program, then call <code><a href="https://rdrr.io/r/base/library.html" class="external-link">library()</a></code> at the start of the program.</li>
-<li>Most of the packages that you are likely to need will already be specified in the <code>renv.lock</code> file, so they will already been installed if you have been keeping in sync–you can check this by entering <code><a href="https://rstudio.github.io/renv/reference/status.html" class="external-link">renv::status()</a></code> in the Console. However, you may also wish to install <a href="https://pharmaverse.github.io/metatools/" class="external-link">metatools</a> and <a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a>, which are currently not specified in the <code>renv.lock</code> file. If you feel that you need to install any other packages in addition to those just mentioned, then please tag <code>@pharmaverse/admiral</code> to discuss with the development core team.</li>
+<li>Each of these programs is written as a standalone R script: if any packages need to be loaded for a given program, then call <code><a href="https://rdrr.io/r/base/library.html" class="external-link">library()</a></code> at the start of the program (but please do <strong>not</strong> call <code><a href="https://rdrr.io/r/base/library.html" class="external-link">library(admiral.test)</a></code>).</li>
+<li>Most of the packages that you are likely to need will already be specified in the <code>renv.lock</code> file, so they will already be installed if you have been keeping in sync–you can check this by entering <code><a href="https://rstudio.github.io/renv/reference/status.html" class="external-link">renv::status()</a></code> in the Console. However, you may also wish to install <code>{metatools}</code> and <a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a>, which are currently not specified in the <code>renv.lock</code> file. If you feel that you need to install any other packages in addition to those just mentioned, then please tag <code>@pharmaverse/admiral</code> to discuss with the development core team.</li>
 <li>When you have created a program in the <code>dev/</code> folder, you need to run it as a standalone R script, in order to generate a test dataset that will become part of the <code>{admiral.test}</code> package, but you do not need to build the package.</li>
 <li>Following <a href="https://r-pkgs.org/data.html#sec-data-data" class="external-link">best practice</a>, each dataset is stored as a <code>.rda</code> file whose name is consistent with the name of the dataset: for example, the dataset <code>dm</code> should be renamed to <code>raw_dm</code> before saving it as <code>raw_dm.rda</code>; if you save <code>dm</code> as <code>raw_dm.rda</code> and subsequently load the <code>.rda</code> file, then <code>dm</code> (not <code>raw_dm</code>) will be loaded into the global environment.</li>
 <li>The programs in <code>dev/</code> are stored within the <code>{admiral.test}</code> GitHub repository, but they are <strong>not</strong> part of the <code>{admiral.test}</code> package–the <code>dev/</code> folder is specified in <code>.Rbuildignore</code>.</li>
