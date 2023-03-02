@@ -1,10 +1,10 @@
 # RS
+# Please note that tr.R should run first
 
 library(dplyr)
 library(tidyselect)
 library(admiral)
 library(metatools)
-library(admiral.test)
 
 # Reading input data
 data("admiral_tr")

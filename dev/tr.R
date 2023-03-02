@@ -2,13 +2,13 @@
 
 library(dplyr)
 library(tidyselect)
+library(metatools)
 library(admiral)
 library(metatools)
-library(admiral.test)
 
 set.seed(1)
 
-# Reading input data
+# Reading input data ----
 data("admiral_dm")
 data("admiral_suppdm")
 data("admiral_sv")
@@ -18,21 +18,21 @@ dm <- convert_blanks_to_na(admiral_dm)
 suppdm <- convert_blanks_to_na(admiral_suppdm)
 sv <- convert_blanks_to_na(admiral_sv)
 
-# Creating data frame with visits
+# Creating data frame with visits ----
 dm1 <- dm %>%
   combine_supp(suppdm)
 
 dm2 <- select(dm1, c(STUDYID, USUBJID, SAFETY, EFFICACY))
 
 tr1 <- select(sv, c(STUDYID, USUBJID, VISIT, VISITNUM, VISITDY, SVSTDTC)) %>%
-  filter(VISITNUM %in% c(3, 7, 9, 10.1, 12)) %>%
+  filter(VISITNUM %in% c(3, 7, 9, 9.2, 9.3, 10.1, 12)) %>%
   rename(TRDTC = SVSTDTC, TRDY = VISITDY)
 
 tr2 <- merge(dm2, tr1, by = c("STUDYID", "USUBJID"))
 
-# Creating dummy tumors
+# Creating dummy tumors ----
 trloc <- c(
-  "ABDOMINAL CAVITY", "ADRENAL GLAND", "BLADDER",
+  "ABDOMINAL CAVITY", "ADRENAL GLAND", "LYMPH NODE", "BLADDER",
   "BODY", "BONE", "BREAST", "CHEST", "COLON",
   "ESOPHAGUS", "HEAD AND NECK", "ANUS", "BILE DUCT",
   "BRAIN", "GALL BLADDER", "HEAD", "HEART",
@@ -58,7 +58,13 @@ tr3a <- bind_rows(
   (tr2 %>% mutate("tar1" = tar + 3, "TRLNKID" = "T04")),
   (tr2 %>% mutate("tar1" = tar + 4, "TRLNKID" = "T05"))
 ) %>%
-  mutate("TREVAL" = "INVESTIGATOR")
+  mutate("TREVAL" = "INVESTIGATOR") %>%
+  # add incomplete date
+  mutate(TRDTC = if_else(
+    USUBJID == "01-701-1015" & VISIT == "BASELINE",
+    substr(TRDTC, 1, 7),
+    TRDTC
+  ))
 
 tar <- floor(runif(n = nrows, min = 1, max = 5))
 tr3b <- bind_rows(
@@ -86,9 +92,10 @@ tr3c <- bind_rows(
     "TREVALID" = "RADIOLOGIST 2"
   )
 
-tr3 <- bind_rows(tr3a, tr3b, tr3c)
+tr3 <- bind_rows(tr3a, tr3b, tr3c) %>%
+  left_join(ttyped, by = "tar1")
 
-# Adding Diameter Values Randomly
+# Adding Diameter Values Randomly ----
 trows <- dim(tr3)[1]
 diam <- floor((runif(n = trows, min = 5, max = 15)))
 
@@ -103,11 +110,12 @@ tr3 <- tr3 %>% mutate(
   "TRSTRESN" = case_when(
     floor(SUBJNO %% 5) == 0 & VISITNUM %in% c(9, 10.1) ~ 0,
     floor(SUBJNO %% 9) == 0 & TREVAL == "INVESTIGATOR" &
-      VISITNUM == 10.1 ~ NA_real_,
+      VISITNUM == 7 & TRLNKID == paste0("T0", SUBJNO %% 5 + 1) ~ NA_real_,
     floor(SUBJNO %% 8) == 0 &
       (TREVALID == "RADIOLOGIST 1" | TREVALID == "RADIOLOGIST 2") &
       VISITNUM == 10.1 ~ NA_real_,
-    VISITNUM == 3 ~ TRSTRESN + 5,
+    floor(SUBJNO %% 2) != 0 & VISITNUM == 3 ~ TRSTRESN + 5,
+    floor(SUBJNO %% 2) == 0 & VISITNUM != 3 ~ TRSTRESN + 5,
     TRUE ~ TRSTRESN
   ),
   "TRORRES" = as.character(TRSTRESN),
@@ -119,14 +127,39 @@ tr3 <- tr3 %>% mutate(
   "TRTEST" = "Diameter"
 )
 
-# SUMDIAM
+# Adding LDIAM and LPERP ----
+tr3ldiam <- tr3 %>% mutate(
+  TRSTRESN = if_else(
+    TRLOC == "LYMPH NODE",
+    TRSTRESN * 1.1,
+    TRSTRESN
+  ),
+  TRORRES = as.character(TRSTRESN),
+  TRSTRESC = TRORRES,
+  TRTESTCD = "LDIAM",
+  TRTEST = "Longest Diameter"
+)
+
+tr3lperp <- tr3 %>% mutate(
+  TRSTRESN = if_else(
+    TRLOC == "LYMPH NODE",
+    TRSTRESN,
+    TRSTRESN * 0.9
+  ),
+  TRORRES = as.character(TRSTRESN),
+  TRSTRESC = TRORRES,
+  TRTESTCD = "LPERP",
+  TRTEST = "Longest Perpendicular"
+)
+
+# SUMDIAM ----
 tr3sum <- tr3 %>%
   group_by(
     STUDYID, USUBJID, VISITNUM, VISIT, TREVAL,
     TREVALID, TRDTC, TRDY, TRGRPID, TRORRESU,
     TRSTRESU, SAFETY, EFFICACY
   ) %>%
-  summarize(TRSTRESN = sum(TRSTRESN)) %>%
+  summarize(TRSTRESN = sum(TRSTRESN, na.rm = TRUE)) %>%
   mutate(
     "TRTESTCD" = "SUMDIAM",
     "TRTEST" = "Sum of Diameter",
@@ -134,7 +167,7 @@ tr3sum <- tr3 %>%
     "TRSTRESC" = TRORRES
   )
 
-# Non-target Tumors
+# Non-target Tumors ----
 
 ntar <- floor(runif(n = nrows, min = 11, max = 15))
 ntr3a <- bind_rows(
@@ -246,9 +279,11 @@ new3 <- bind_rows(new3a, new3b, new3c) %>%
   ) %>%
   filter(VISITNUM > 3 & (TRORRES != "NO"))
 
-# Setting All Tumor Data
-tr5 <- bind_rows(
+# Setting All Tumor Data ----
+tr <- bind_rows(
   tr3 %>% filter(EFFICACY == "Y" | (SAFETY == "Y" & VISITNUM == 3)),
+  tr3ldiam %>% filter(EFFICACY == "Y" | (SAFETY == "Y" & VISITNUM == 3)),
+  tr3lperp %>% filter(EFFICACY == "Y" | (SAFETY == "Y" & VISITNUM == 3)),
   tr3sum %>% filter(EFFICACY == "Y" | (SAFETY == "Y" & VISITNUM == 3)),
   ntr3 %>% filter(EFFICACY == "Y" | (SAFETY == "Y" & VISITNUM == 3)),
   new3 %>% filter(EFFICACY == "Y" | (SAFETY == "Y" & VISITNUM == 3))
@@ -261,10 +296,8 @@ tr5 <- bind_rows(
     VISITNUM == 12 ~ "A4"
   ))
 
-tr6 <- left_join(tr5, ttyped, by = "tar1")
-
-# TRSEQ and Other Variables;
-tr7 <- tr6 %>%
+# TRSEQ and Other Variables ----
+tr <- tr %>%
   arrange(STUDYID, USUBJID, VISITNUM, TRDTC, TRGRPID, TRLNKID) %>%
   group_by(STUDYID, USUBJID) %>%
   mutate(
@@ -285,10 +318,11 @@ tr7 <- tr6 %>%
       TRUE ~ TRLNKG
     ),
     "TRACPTFL" = case_when(TREVALID == "RADIOLOGIST 1" ~ "Y")
-  )
+  ) %>%
+  ungroup()
 
-# Creating SUPPTR
-supptr1 <- select(tr7, c("STUDYID", "USUBJID", "TRSEQ", "DOMAIN", "TRLOC"))
+# Creating SUPPTR ----
+supptr1 <- select(tr, c("STUDYID", "USUBJID", "TRSEQ", "DOMAIN", "TRLOC"))
 supptr2 <- rename(supptr1, "RDOMAIN" = "DOMAIN") %>%
   mutate(
     "IDVARVAL" = as.character(TRSEQ),
@@ -322,8 +356,8 @@ supptr <- supptr %>% add_labels(
 
 attr(supptr, "label") <- "Supplemental Tumor Results"
 
-# Creating TR
-tr <- select(tr7, c(
+# Creating TR ----
+tr <- select(tr, c(
   STUDYID, DOMAIN, USUBJID, TRSEQ, TRGRPID, TRLNKGRP,
   TRLNKID, TRTESTCD, TRTEST, TRORRES, TRORRESU, TRSTRESC,
   TRSTRESN, TRSTRESU, TRSTAT, TRREASND, TRMETHOD,
