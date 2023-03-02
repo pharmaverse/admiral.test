@@ -131,8 +131,8 @@ tr3 <- tr3 %>% mutate(
 tr3ldiam <- tr3 %>% mutate(
   TRSTRESN = if_else(
     TRLOC == "LYMPH NODE",
-    TRSTRESN,
-    TRSTRESN * 1.1
+    TRSTRESN * 1.1,
+    TRSTRESN
   ),
   TRORRES = as.character(TRSTRESN),
   TRSTRESC = TRORRES,
@@ -143,8 +143,8 @@ tr3ldiam <- tr3 %>% mutate(
 tr3lperp <- tr3 %>% mutate(
   TRSTRESN = if_else(
     TRLOC == "LYMPH NODE",
-    TRSTRESN * 0.9,
-    TRSTRESN
+    TRSTRESN,
+    TRSTRESN * 0.9
   ),
   TRORRES = as.character(TRSTRESN),
   TRSTRESC = TRORRES,
