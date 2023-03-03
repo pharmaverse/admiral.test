@@ -46,3 +46,4 @@ Then there are two main ways to extend the test data, either by adding new datas
 -   Run the program.
 -   Reflect this update, by specifying both `raw_<name>` and `admiral_<name>` in `R/data.R`.
 -   Run `devtools::document()` in order to update `NAMESPACE` and update the `.Rd` files in `man/`.
+

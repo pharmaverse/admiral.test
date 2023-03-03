@@ -28,6 +28,7 @@ Other contributors:
   \item Antonio Rodríguez [contributor]
   \item Claudia Carlucci [contributor]
   \item Annie Yang [contributor]
+  \item Tamara Senior [contributor]
   \item F. Hoffmann-La Roche AG [copyright holder, funder]
   \item GlaxoSmithKline LLC [copyright holder, funder]
   \item Clinical Data Interchange Standards Consortium [copyright holder]
