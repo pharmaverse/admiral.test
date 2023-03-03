@@ -22,6 +22,7 @@ Authors:
 Other contributors:
 \itemize{
   \item Ross Farrugia [contributor]
+  \item Shan Lee [contributor]
   \item Gopi Vegesna [contributor]
   \item Sophie Shapcott [contributor]
   \item Mahdi About [contributor]
