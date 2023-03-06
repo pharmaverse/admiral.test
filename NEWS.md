@@ -14,8 +14,8 @@
  - Removed `library(admiral.test)` from all programs in the `./dev` directory.
  
 # admiral.test 0.4.0
- - Updated labels for pp and pc datasets (#77)
- - Updates to use `get_terms` and `basket_select` (#94)
+ - `get_smq_select()` and `get_sdq_select()` have been deprecated in favor of `get_terms()` to accommodate changes in {admiral} (#94)
+ - Updated labels for PP and PC datasets (#77)
  - Various updates to improve CI/CD workflows
 
 # admiral.test 0.3.0
