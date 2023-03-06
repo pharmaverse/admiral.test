@@ -1,8 +1,28 @@
+# admiral.test 0.5.0
+ - Updated AE to add variable AELAT for ophthalmology package (#99)
+ - Updated TR, TU, RS for admiralonco package (#103):
+     - tumor location `"LYMPH NODE"` added
+     - TR test codes `"LDIAM"` and `"LPERP"` added
+     - unscheduled visits added
+     - incomplete assessments of target lesions added
+ - Updated QS to add questionnaire for ophthalmology package (#120)
+ - Created SDTM SC dataset for ophthalmology package (#102)
+ - Created SDTM OE dataset for ophthalmology package (#101)
+ - Using {metatools} to add labels to datasets (#87)
+ - `admiral.test` has SDTM data for [oncology](https://pharmaverse.github.io/admiralonco/main/index.html)
+ and [ophthalmology](https://pharmaverse.github.io/admiralophtha/main/reference/index.html)
+ - Removed `library(admiral.test)` from all programs in the `./dev` directory.
+ 
 # admiral.test 0.4.0
-
-- `get_smq_select()` and `get_sdq_select()` have been deprecated in favor of `get_terms()` to accommodate changes in {admiral} (#94)
+ - `get_smq_select()` and `get_sdq_select()` have been deprecated in favor of `get_terms()` to accommodate changes in {admiral} (#94)
  - Updated labels for PP and PC datasets (#77)
- - Implemented admiral CI/CD workflows
+ - Various updates to improve CI/CD workflows
+
+# admiral.test 0.3.0
+ - Updated README for instructions on installation, how to add and update to data (#53)
+ - Adding new data to MH (#51)
+ - Updates to percent differentials in LB (#52)
+ - Implemented admiral CI/CD workflows (#50)
 
 # admiral.test 0.2.0
 

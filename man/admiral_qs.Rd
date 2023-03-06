@@ -5,15 +5,15 @@
 \alias{admiral_qs}
 \title{Questionnaire Dataset}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 121749 rows and 20 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 202907 rows and 20 columns.
 }
 \source{
-\url{https://github.com/cdisc-org/sdtm-adam-pilot-project/blob/master/updated-pilot-submission-package/900172/m5/datasets/cdiscpilot01/tabulations/sdtm/qs.xpt?raw=true} # nolint
+\url{https://github.com/pharmaverse/admiral.test/blob/main/data/admiral_qs.rda} # nolint
 }
 \usage{
 admiral_qs
 }
 \description{
-A SDTM QS dataset from the CDISC pilot project
+A SDTM QS dataset from the CDISC pilot project & Ophthalmology test data
 }
 \keyword{datasets}

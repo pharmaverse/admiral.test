@@ -1,6 +1,8 @@
 ADEG
 ADaM
+admiralonco
 AE
+AELAT
 CDISC
 Contestí
 DM
@@ -14,6 +16,7 @@ MedDRA
 Pharmacokinetic
 Pharmacokinetics
 QS
+README
 SDG
 SDTM
 SMQ
@@ -24,7 +27,7 @@ SUPPTR
 SV
 anonymized
 funder
-repo
-sdg
-smq
+metatools
+nolint
 pc
+repo
