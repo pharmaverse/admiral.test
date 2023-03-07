@@ -46,6 +46,9 @@
     <loc>/reference/admiral_mh.html</loc>
   </url>
   <url>
+    <loc>/reference/admiral_oe.html</loc>
+  </url>
+  <url>
     <loc>/reference/admiral_pc.html</loc>
   </url>
   <url>
@@ -56,6 +59,9 @@
   </url>
   <url>
     <loc>/reference/admiral_rs.html</loc>
+  </url>
+  <url>
+    <loc>/reference/admiral_sc.html</loc>
   </url>
   <url>
     <loc>/reference/admiral_sdg_db.html</loc>
@@ -97,6 +103,9 @@
     <loc>/reference/index.html</loc>
   </url>
   <url>
+    <loc>/reference/raw_ae.html</loc>
+  </url>
+  <url>
     <loc>/reference/raw_ds.html</loc>
   </url>
   <url>
@@ -104,6 +113,9 @@
   </url>
   <url>
     <loc>/reference/raw_mh.html</loc>
+  </url>
+  <url>
+    <loc>/reference/raw_qs.html</loc>
   </url>
   <url>
     <loc>/reference/raw_suppds.html</loc>

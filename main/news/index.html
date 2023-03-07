@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">admiral.test</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.4.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.5.0</span>
       </span>
     </div>
 
@@ -28,14 +28,6 @@
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
-<!-- start dropdown for versions --> <li class="nav-item dropdown">
-        <a href="#" class="nav-link dropdown-toggle"
-          data-bs-toggle="dropdown" role="button"
-          aria-expanded="false" aria-haspopup="true"
-          id="dropdown-versions">Versions</a> <div class="dropdown-menu" aria-labelledby="dropdown-versions"> <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/admiral.test/main">main</a>
-<a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/admiral.test/devel">devel</a>
-<a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/admiral.test/pre-release">pre-release</a> </div></li>
-<!-- end dropdown for versions -->
       </ul><ul class="nav navbar-nav navbar-right"></ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -50,11 +42,35 @@
     </div>
 
     <div class="section level2">
+<h2 class="page-header" data-toc-text="0.5.0" id="admiraltest-050">admiral.test 0.5.0<small>2023-03-06</small><a class="anchor" aria-label="anchor" href="#admiraltest-050"></a></h2>
+<ul><li>Updated AE to add variable AELAT for ophthalmology package (#99)</li>
+<li>Updated TR, TU, RS for admiralonco package (#103):<ul><li>tumor location <code>"LYMPH NODE"</code> added</li>
+<li>TR test codes <code>"LDIAM"</code> and <code>"LPERP"</code> added</li>
+<li>unscheduled visits added</li>
+<li>incomplete assessments of target lesions added</li>
+</ul></li>
+<li>Updated QS to add questionnaire for ophthalmology package (#120)</li>
+<li>Created SDTM SC dataset for ophthalmology package (#102)</li>
+<li>Created SDTM OE dataset for ophthalmology package (#101)</li>
+<li>Using {metatools} to add labels to datasets (#87)</li>
+<li>
+<code>admiral.test</code> has SDTM data for <a href="https://pharmaverse.github.io/admiralonco/main/index.html" class="external-link">oncology</a> and <a href="https://pharmaverse.github.io/admiralophtha/main/reference/index.html" class="external-link">ophthalmology</a>
+</li>
+<li>Removed <code><a href="https://rdrr.io/r/base/library.html" class="external-link">library(admiral.test)</a></code> from all programs in the <code>./dev</code> directory.</li>
+</ul></div>
+    <div class="section level2">
 <h2 class="page-header" data-toc-text="0.4.0" id="admiraltest-040">admiral.test 0.4.0<small>2022-11-29</small><a class="anchor" aria-label="anchor" href="#admiraltest-040"></a></h2>
 <ul><li>
 <code>get_smq_select()</code> and <code>get_sdq_select()</code> have been deprecated in favor of <code><a href="../reference/get_terms.html">get_terms()</a></code> to accommodate changes in {admiral} (#94)</li>
 <li>Updated labels for PP and PC datasets (#77)</li>
-<li>Implemented admiral CI/CD workflows</li>
+<li>Various updates to improve CI/CD workflows</li>
+</ul></div>
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="0.3.0" id="admiraltest-030">admiral.test 0.3.0<small>2022-09-01</small><a class="anchor" aria-label="anchor" href="#admiraltest-030"></a></h2>
+<ul><li>Updated README for instructions on installation, how to add and update to data (#53)</li>
+<li>Adding new data to MH (#51)</li>
+<li>Updates to percent differentials in LB (#52)</li>
+<li>Implemented admiral CI/CD workflows (#50)</li>
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.2.0" id="admiraltest-020">admiral.test 0.2.0<small>2022-05-30</small><a class="anchor" aria-label="anchor" href="#admiraltest-020"></a></h2>
@@ -82,7 +98,7 @@
 
 
       <footer><div class="copyright">
-  <p></p><p>Developed by Thomas Neitmann, Stefan Bundfuss, F. Hoffmann-La Roche AG, GlaxoSmithKline LLC.</p>
+  <p></p><p>Developed by Thomas Neitmann, Stefan Bundfuss, Gordon Miller, Ben Straub, Syed Mubasheer, F. Hoffmann-La Roche AG, GlaxoSmithKline LLC.</p>
 </div>
 
 <div class="pkgdown">
