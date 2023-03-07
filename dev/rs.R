@@ -1,10 +1,10 @@
 # RS
+# Please note that tr.R should run first
 
 library(dplyr)
-library(labelled)
 library(tidyselect)
 library(admiral)
-library(admiral.test)
+library(metatools)
 
 # Reading input data
 data("admiral_tr")
@@ -188,7 +188,7 @@ rs <- select(rs6, c(
   VISITNUM, VISIT, RSDTC, RSDY
 ))
 
-rs <- rs %>% set_variable_labels(
+rs <- rs %>% add_labels(
   STUDYID = "Study Identifier",
   DOMAIN = "Domain Abbreviation",
   USUBJID = "Unique Subject Identifier",

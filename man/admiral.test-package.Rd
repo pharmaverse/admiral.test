@@ -14,11 +14,15 @@ A set of Study Data Tabulation Model (SDTM) datasets from the Clinical Data Inte
 Authors:
 \itemize{
   \item Stefan Bundfuss
+  \item Gordon Miller
+  \item Ben Straub
+  \item Syed Mubasheer
 }
 
 Other contributors:
 \itemize{
   \item Ross Farrugia [contributor]
+  \item Shan Lee [contributor]
   \item Gopi Vegesna [contributor]
   \item Sophie Shapcott [contributor]
   \item Mahdi About [contributor]

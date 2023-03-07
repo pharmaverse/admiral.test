@@ -5,7 +5,7 @@
 \alias{admiral_supptr}
 \title{Supplemental Tumor Results Dataset}
 \format{
-An object of class \code{grouped_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 28989 rows and 9 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 55995 rows and 9 columns.
 }
 \usage{
 admiral_supptr
