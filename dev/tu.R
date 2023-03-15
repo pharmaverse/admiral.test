@@ -1,10 +1,10 @@
 # TU
+# Please note that tr.R should run first
 
 library(dplyr)
 library(tidyselect)
 library(admiral)
 library(metatools)
-library(admiral.test)
 
 # Reading input data  --  DUMMY DATA CREATED FROM TR data created from TR
 data("admiral_tr")
@@ -23,23 +23,24 @@ tr <- full_join(tr, supptr1, by = c("STUDYID", "USUBJID", "TRSEQ"))
 tu1 <- tr %>%
   filter((VISITNUM == 3 | (TRGRPID == "NEW" &
     !is.na(TRORRES) & TRORRES != "NO"))) %>%
-  filter(TRTESTCD != "SUMDIAM") %>%
+  filter(TRTESTCD %in% c("TUMSTATE", "DIAMETER")) %>%
   rename(
-    "TULNKID" = "TRLNKID",
-    "TUMETHOD" = "TRMETHOD",
-    "TUSEQ" = "TRSEQ",
-    "TUEVAL" = "TREVAL",
-    "TUEVALID" = "TREVALID",
-    "TUDTC" = "TRDTC",
-    "TUDY" = "TRDY",
-    "TULOC" = "TRLOC",
-    "TUACPTFL" = "TRACPTFL"
+    TULNKID = TRLNKID,
+    TUMETHOD = TRMETHOD,
+    TUSEQ = TRSEQ,
+    TUEVAL = TREVAL,
+    TUEVALID = TREVALID,
+    TUDTC = TRDTC,
+    TUDY = TRDY,
+    TULOC = TRLOC,
+    TUACPTFL = TRACPTFL
   ) %>%
   mutate(
-    "TUTESTCD" = "TUMIDENT",
-    "TUTEST" = "Tumor Identification",
-    "TUORRES" = TRGRPID,
-    "TUSTRESC" = TUORRES
+    DOMAIN = "TU",
+    TUTESTCD = "TUMIDENT",
+    TUTEST = "Tumor Identification",
+    TUORRES = TRGRPID,
+    TUSTRESC = TUORRES
   )
 
 # TUSEQ
