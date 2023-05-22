@@ -58,7 +58,7 @@ get_terms <- function(basket_select,
     }
     keep_cols <- c(
       TERMNAME = "termname",
-      SRC_VAR = "termvar",
+      SRCVAR = "termvar",
       GRPNAME = "sdg_name",
       select_id
     )
