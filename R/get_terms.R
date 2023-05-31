@@ -5,7 +5,7 @@
 #'
 #' @param version MedDRA version
 #'
-#' @param keep_id Should `QUERY_ID` be included in the output?
+#' @param keep_id Should `GRPID` be included in the output?
 #'
 #' @param temp_env Temporary environment
 get_terms <- function(basket_select,
@@ -27,14 +27,14 @@ get_terms <- function(basket_select,
       is_in_scope <- rep(TRUE, nrow(temp_env$admiral_smq_db))
     }
     if (keep_id) {
-      select_id <- c(QUERY_ID = "smq_id")
+      select_id <- c(GRPID = "smq_id")
     } else {
       select_id <- NULL
     }
     keep_cols <- c(
-      TERM_NAME = "termname",
-      TERM_LEVEL = "termvar",
-      QUERY_NAME = "smq_name",
+      TERMNAME = "termname",
+      SRCVAR = "termvar",
+      GRPNAME = "smq_name",
       select_id
     )
 
@@ -52,14 +52,14 @@ get_terms <- function(basket_select,
       is_in_sdq <- temp_env$admiral_sdg_db$sdg_id == basket_select$id
     }
     if (keep_id) {
-      select_id <- c(QUERY_ID = "sdg_id")
+      select_id <- c(GRPID = "sdg_id")
     } else {
       select_id <- NULL
     }
     keep_cols <- c(
-      TERM_NAME = "termname",
-      TERM_LEVEL = "termvar",
-      QUERY_NAME = "sdg_name",
+      TERMNAME = "termname",
+      SRCVAR = "termvar",
+      GRPNAME = "sdg_name",
       select_id
     )
 
