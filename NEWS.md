@@ -11,6 +11,8 @@ variables are as follows:
      - `TERM_LEVEL` to `SRCVAR`
      - `TERM_NAME` to `TERMNAME`
      - `TERM_ID` to `TERMID`
+  
+  - Maintainer of package switched from Thomas Neitmann to Ben Straub (#139)
 
 # admiral.test 0.5.0
  - Updated AE to add variable AELAT for ophthalmology package (#99)
