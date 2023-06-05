@@ -9,13 +9,13 @@
 A set of Study Data Tabulation Model (SDTM) datasets from the Clinical Data Interchange Standards Consortium (CDISC) pilot project used for testing and developing Analysis Data Model (ADaM) derivations inside the 'admiral' package.
 }
 \author{
-\strong{Maintainer}: Thomas Neitmann \email{thomas.neitmann@roche.com}
+\strong{Maintainer}: Ben Straub \email{ben.x.straub@gsk.com}
 
 Authors:
 \itemize{
   \item Stefan Bundfuss
   \item Gordon Miller
-  \item Ben Straub
+  \item Thomas Neitmann
   \item Syed Mubasheer
 }
 
