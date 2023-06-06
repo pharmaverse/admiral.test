@@ -1,3 +1,19 @@
+# admiral.test 0.6.0
+
+ - Updated `get_terms()` function to handle variable renames in query data set. Renamed
+variables are as follows:
+  
+     - `VAR_PREFIX` to `PREFIX`
+     - `QUERY_NAME` to `GRPNAME`
+     - `QUERY_ID` to `GRPID`
+     - `QUERY_SCOPE` to `SCOPE`
+     - `QUERY_SCOPE_NUM` to `SCOPEN`
+     - `TERM_LEVEL` to `SRCVAR`
+     - `TERM_NAME` to `TERMNAME`
+     - `TERM_ID` to `TERMID`
+  
+  - Maintainer of package switched from Thomas Neitmann to Ben Straub (#139)
+
 # admiral.test 0.5.0
  - Updated AE to add variable AELAT for ophthalmology package (#99)
  - Updated TR, TU, RS for admiralonco package (#103):

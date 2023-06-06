@@ -12,7 +12,7 @@ get_terms(basket_select, version, keep_id, temp_env)
 
 \item{version}{MedDRA version}
 
-\item{keep_id}{Should `QUERY_ID` be included in the output?}
+\item{keep_id}{Should `GRPID` be included in the output?}
 
 \item{temp_env}{Temporary environment}
 }
