@@ -40,6 +40,5 @@ Suggests:
     rmarkdown,
     roxygen2,
     spelling,
-    styler,
     usethis,
     covr
