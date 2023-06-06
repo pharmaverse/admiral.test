@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">admiral.test</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.5.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.6.0</span>
       </span>
     </div>
 
@@ -28,14 +28,6 @@
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
-<!-- start dropdown for versions --> <li class="nav-item dropdown">
-        <a href="#" class="nav-link dropdown-toggle"
-          data-bs-toggle="dropdown" role="button"
-          aria-expanded="false" aria-haspopup="true"
-          id="dropdown-versions">Versions</a> <div class="dropdown-menu" aria-labelledby="dropdown-versions"> <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/admiral.test/main">main</a>
-<a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/admiral.test/devel">devel</a>
-<a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/admiral.test/pre-release">pre-release</a> </div></li>
-<!-- end dropdown for versions -->
       </ul><ul class="nav navbar-nav navbar-right"></ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -50,9 +42,41 @@
     </div>
 
     <div class="section level2">
+<h2 class="page-header" data-toc-text="0.6.0" id="admiraltest-060">admiral.test 0.6.0<a class="anchor" aria-label="anchor" href="#admiraltest-060"></a></h2>
+<ul><li>
+<p>Updated <code><a href="../reference/get_terms.html">get_terms()</a></code> function to handle variable renames in query data set. Renamed variables are as follows:</p>
+<ul><li>
+<code>VAR_PREFIX</code> to <code>PREFIX</code>
+</li>
+<li>
+<code>QUERY_NAME</code> to <code>GRPNAME</code>
+</li>
+<li>
+<code>QUERY_ID</code> to <code>GRPID</code>
+</li>
+<li>
+<code>QUERY_SCOPE</code> to <code>SCOPE</code>
+</li>
+<li>
+<code>QUERY_SCOPE_NUM</code> to <code>SCOPEN</code>
+</li>
+<li>
+<code>TERM_LEVEL</code> to <code>SRCVAR</code>
+</li>
+<li>
+<code>TERM_NAME</code> to <code>TERMNAME</code>
+</li>
+<li>
+<code>TERM_ID</code> to <code>TERMID</code>
+</li>
+</ul></li>
+<li><p>Maintainer of package switched from Thomas Neitmann to Ben Straub (#139)</p></li>
+</ul></div>
+    <div class="section level2">
 <h2 class="page-header" data-toc-text="0.5.0" id="admiraltest-050">admiral.test 0.5.0<small>2023-03-06</small><a class="anchor" aria-label="anchor" href="#admiraltest-050"></a></h2>
 <ul><li>Updated AE to add variable AELAT for ophthalmology package (#99)</li>
-<li>Updated TR, TU, RS for admiralonco package (#103):<ul><li>tumor location <code>"LYMPH NODE"</code> added</li>
+<li>Updated TR, TU, RS for admiralonco package (#103):
+<ul><li>tumor location <code>"LYMPH NODE"</code> added</li>
 <li>TR test codes <code>"LDIAM"</code> and <code>"LPERP"</code> added</li>
 <li>unscheduled visits added</li>
 <li>incomplete assessments of target lesions added</li>
@@ -89,13 +113,16 @@
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.1.2" id="admiraltest-012">admiral.test 0.1.2<small>2022-02-15</small><a class="anchor" aria-label="anchor" href="#admiraltest-012"></a></h2>
-<ul><li>CRAN release version with all comments resolved (#18)</li></ul></div>
+<ul><li>CRAN release version with all comments resolved (#18)</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.1.1" id="admiraltest-011">admiral.test 0.1.1<a class="anchor" aria-label="anchor" href="#admiraltest-011"></a></h2>
-<ul><li>Addressing CRAN comments (#16)</li></ul></div>
+<ul><li>Addressing CRAN comments (#16)</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.1.0" id="admiraltest-010">admiral.test 0.1.0<a class="anchor" aria-label="anchor" href="#admiraltest-010"></a></h2>
-<ul><li>Test data for the {admiral} package taken from the CDISC pilot project - mainly safety data.</li></ul></div>
+<ul><li>Test data for the {admiral} package taken from the CDISC pilot project - mainly safety data.</li>
+</ul></div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -106,11 +133,11 @@
 
 
       <footer><div class="copyright">
-  <p></p><p>Developed by Thomas Neitmann, Stefan Bundfuss, Gordon Miller, Ben Straub, Syed Mubasheer, F. Hoffmann-La Roche AG, GlaxoSmithKline LLC.</p>
+  <p></p><p>Developed by Ben Straub, Stefan Bundfuss, Gordon Miller, Thomas Neitmann, Syed Mubasheer, F. Hoffmann-La Roche AG, GlaxoSmithKline LLC.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>
