@@ -1,7 +1,7 @@
 Package: admiral.test
 Type: Package
 Title: Test Data for the 'admiral' Package
-Version: 0.6.0
+Version: 0.7.0
 Authors@R: c(
   person("Ben", "Straub", email = "ben.x.straub@gsk.com", role = c("aut", "cre")),
   person("Stefan", "Bundfuss", role = "aut"),
