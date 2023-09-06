@@ -1,3 +1,7 @@
+# admiral.test 0.7.0
+
+ - New messaging on attachment of package to indicate the archival of package in favor of `pharmaversesdtm` (#145)
+
 # admiral.test 0.6.0
 
  - Updated `get_terms()` function to handle variable renames in query data set. Renamed
