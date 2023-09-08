@@ -1,5 +1,7 @@
 # admiral.test
 
+#### `admiral.test` v0.7.0  will be the final version. At the end of 2023, the package will be archived in favor of [pharmaversesdtm](https://github.com/pharmaverse/pharmaversesdtm/). 
+
 Test data for the `{admiral}` package taken from the [CDISC pilot project](https://github.com/cdisc-org/sdtm-adam-pilot-project) and renamed with `admiral_` prefix for clarity.
 As this mostly contains safety data only, we extend this as needed by adding further test data required such as for PK and TA-specific efficacy analyses.
 See the "How To Update" section below for more details.
